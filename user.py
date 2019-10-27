@@ -19,8 +19,8 @@ class User(object):
 		self.status = set()
 
 		self.inventory = {}
-		self.inventory[weapons] = set()		
-		self.inventory[items] = []
+#		self.inventory[weapons] = set()		
+#		self.inventory[items] = []
 	
 	def heal(self,health_points):    #look into defining max efficiently. Ask group about setting MAX for other attributes.	
 		if self.health in range(0,100-health_points):	
@@ -76,7 +76,7 @@ class User(object):
 	def list_status(self):
 		if self.status == False:
 			print('You have no statuses that affect your play')
-		else
+		else:
 			print(self.status)
 		return self.status
 
@@ -113,7 +113,7 @@ class User(object):
 
 	def print_user_stats(self):
 		print(self.name)
-		print('Health: ', self.health, '\100', sep='')
+		print('Health: ', self.health, '/100', sep='')
 		print('Armor hit class:', self.armor)
 		print('Intelligence:', self.intel)
 		print('Speed:', self.speed)
@@ -130,3 +130,4 @@ squirrel = User('Squirrel', 100, 50, 60, 60, set(), dict())
 
 #crab is good for armor and ok for speed and intelligence
 horseshoe_crab = User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
+

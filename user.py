@@ -79,35 +79,35 @@ class User(object):
 		return self.status
 
 	def add_weapon(self,weapon):
-		self.inventory[weapons].add(weapon)
+		self.inventory['weapons'].add(weapon)
 
 	def remove_weapon(self, weapon):
-		self.inventory[weapons].remove(weapon)
+		self.inventory['weapons'].remove(weapon)
 
 	def lose_weapon(self, weapon):   #this is random
-		lost_weapon = self.inventory[weapons].pop()
+		lost_weapon = self.inventory['weapons'].pop()
 
 	def list_weapons(self):
-		return self.inventory[weapons]
+		return self.inventory['weapons']
 
 	def list_items(self):
-		unique_items = set(self.inventory[items])
+		unique_items = set(self.inventory['items'])
 		for item in unique_items:
-			num_item = self.inventory[items].count(item)
+			num_item = self.inventory['items'].count(item)
 			print(num_item, item)
 
 	def add_item(self, item):
-		self.inventory[items].append(item)
+		self.inventory['items'].append(item)
 
 	def remove_item(self, item):
-		self.inventory[items].remove(item)
+		self.inventory['items'].remove(item)
 
 	def lose_item(self):   #this is random
-		random.shuffle(self.inventory[items])
-		lost_item = self.inventory[items].pop() 
+		random.shuffle(self.inventory['items'])
+		lost_item = self.inventory['items'].pop() 
 
 	def count_item(self, specific_item):
-		return self.inventory[items].count(specific_item)
+		return self.inventory['items'].count(specific_item)
 
 	def print_user_stats(self):
 		print(self.name)

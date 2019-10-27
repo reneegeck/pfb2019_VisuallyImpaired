@@ -19,8 +19,6 @@ class User(object):
 		self.status = set()
 
 		self.inventory = {}
-#		self.inventory[weapons] = set()		
-#		self.inventory[items] = []
 	
 	def heal(self,health_points):    #look into defining max efficiently. Ask group about setting MAX for other attributes.	
 		if self.health in range(0,100-health_points):	
@@ -119,15 +117,16 @@ class User(object):
 		print('Speed:', self.speed)
 
 
+#Move to trait quiz (or maybe backbone script?)
 #pigeon has ok armor and speed and is not very intelligent
-pigeon  = User('Pigeon', 100, 60, 60, 50, set(), dict()) 
+#pigeon  = User('Pigeon', 100, 60, 60, 40, set(), dict()) 
 
 #banana slug has not good armor and is slow but weirdly intelligent
-banana_slug = User('Banana Slug', 100, 40, 30, 80, set(), dict())
+#banana_slug = User('Banana Slug', 100, 40, 30, 80, set(), dict())
 
 #squirrel is ok for armor and is faster, and has ok intelligence
-squirrel = User('Squirrel', 100, 50, 60, 60, set(), dict())
+#squirrel = User('Squirrel', 100, 50, 60, 60, set(), dict())
 
 #crab is good for armor and ok for speed and intelligence
-horseshoe_crab = User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
+#horseshoe_crab = User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 

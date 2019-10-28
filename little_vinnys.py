@@ -2,7 +2,7 @@
 
 import time, user, animate_bus, print_ascii
 
-player = user.User('Pigeon', 100, 60, 60, 40, set(), dict())
+player = user.User('Pigeon', 4, 60, 60, 40, set(), dict())
 #encounter to take trip to Little Vinny's 
 #def foraging(player):
 print("You see a shuttle in the parking lot. Do you want to get on it?")
@@ -11,7 +11,7 @@ answer = input("Yes or No? ")
 
 if answer.lower() == 'yes':
 	print("Great! Welcome on board")
-	time.sleep(2)   #INCLUDE BUS ART HERE?
+	time.sleep(1.5)
 	animate_bus.moving_bus()
 	print('\n\n'+"The shuttle stops in Huntington. Do you want to get out?"+'\n\n')
 	get_off_bus = input("Yes or No? ")
@@ -21,7 +21,7 @@ if answer.lower() == 'yes':
 		print_ascii.vinnys_sign()
 		vinnys = 'No'			
 
-		while vinnys.lower() == 'no':
+		while vinnys.lower() != 'yes':
 			vinnys = input("Do you want to get a slice? Yes or no? ")
 
 			if vinnys.lower() == 'yes':
@@ -63,7 +63,7 @@ if answer.lower() == 'yes':
 				player.print_health_bar()
 
 			elif soup_answer.lower() == 'no':
-				print("Matty Two Soups doesn't take no for an answer! Try again.\n")
+				print("\nMatty Two Soups doesn't take no for an answer! Try again.\n")
 				continue			
 	
 elif answer.lower() == 'no':
@@ -88,5 +88,5 @@ elif answer.lower() == 'no':
 			player.print_health_bar()	
 
 		elif soup_answer.lower() == 'no':
-			print("Matty Two Soups doesn't take no for an answer! Try again.\n")
+			print("\nMatty Two Soups doesn't take no for an answer! Try again.\n")
 			continue

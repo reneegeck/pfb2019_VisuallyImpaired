@@ -18,7 +18,7 @@ class User(object):
 		self.intel = intel
 		self.status = set()
 
-		self.inventory = {}
+		self.inventory = {'weapons' : set(), 'items' : []}
 	
 	def heal(self,health_points):    #look into defining max efficiently. Ask group about setting MAX for other attributes.	
 		if self.health in range(0,100-health_points):	

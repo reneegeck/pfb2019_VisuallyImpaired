@@ -23,3 +23,17 @@ def soup_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
+
+def raccoon_pic():
+	frames = []
+	with open('raccoon_image.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def sleepy_raccoon_pic():
+	frames = []
+	with open('raccoon_sleep_image.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))

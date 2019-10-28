@@ -16,3 +16,10 @@ def pizza_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
+
+def soup_pic():
+	frames = []
+	with open('soups.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))

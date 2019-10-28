@@ -126,7 +126,7 @@ class User(object):
 		else:
 			bar = fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end'] + color_dict['green']
 			bar_out = '{}hp|{}| {}%'.format(self.health, bar, percent)
-		return(bar_out)
+		print(bar_out)
 
 
 #Move to trait quiz (or maybe backbone script?)

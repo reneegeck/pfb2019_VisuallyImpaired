@@ -41,3 +41,10 @@ def linux_book_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
+
+def wizard_pic():
+	frames = []
+	with open('code_for_wizard_ASCII.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))

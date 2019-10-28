@@ -60,10 +60,32 @@ def quiz_input6(variable1,variable2):
   answer = input('>>>')
   return(answer)
 
+def re_input_easy(text):
+  print("What will match the following EASY regular expression?")
+  print("[Regular expression]")
+  print(decode('+---------------%' + '+--------------%' + '+------------%' + '+-------------%'))
+  print(decode('| A) Bananas    |' + '| B)  Seaweed  |' + '|  C)  Corn  |' + '| D)  Nuts    |'))
+  print(decode('\\---------------/' + '\\--------------/' + '\\------------/' + '\\-------------/'))
+  answer = input('>>> ')
+  return(answer)	
 
+def re_input_med(text):
+  print("What will match the following MEDIUM regular expression?")
+  print("[regular expression]")
+  print(decode('+---------------%' + '+--------------%' + '+------------%' + '+-------------%'))
+  print(decode('| A) Bananas    |' + '| B)  Seaweed  |' + '|  C)  Corn  |' + '| D)  Nuts    |'))
+  print(decode('\\---------------/' + '\\--------------/' + '\\------------/' + '\\-------------/'))
+  answer = input('>>> ')
+  return(answer)
 
-
-
+def re_input_hard(text):
+  print("What will match the following DIFFICULT` regular expression?")
+  print("[regular expression]")
+  print(decode('+---------------%' + '+--------------%' + '+------------%' + '+-------------%'))
+  print(decode('| A) Bananas    |' + '| B)  Seaweed  |' + '|  C)  Corn  |' + '| D)  Nuts    |'))
+  print(decode('\\---------------/' + '\\--------------/' + '\\------------/' + '\\-------------/'))
+  answer = input('>>> ')
+  return(answer)
 
 
 

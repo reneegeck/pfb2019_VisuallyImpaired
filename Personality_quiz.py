@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+import user, weapon_choice, little_vinnys
 
+#======================================================
 from print_quiz import decode
 from print_quiz import quiz_input1, quiz_input2, quiz_input3, quiz_input4, quiz_input5, quiz_input6
 
@@ -89,20 +91,45 @@ if sorted_dict[0][1] == sorted_dict[1][1]:
 	if q6.lower() == "a":
 		for key, value in TieBreak_Dict.items():
 			if value == variable1:
-				print("Congrats, you are a", key)
+				animal_name = key
+				print("Congrats, you are a", animal_name)
 	elif q6.lower() == "b":
 		for key, value in TieBreak_Dict.items():
 			if value == variable2:
-				print("Congrats, you are a", key)
+				animal_name = key
+				print("Congrats, you are a", animal_name)
 	else:
 		print("Sorry I don't understand, try a different response")
 else:
-	print("Congrats, you are a",sorted_dict[0][0])
+	animal_name = sorted_dict[0][0]
+	print("Congrats, you are a",animal_name)
 
+#==================================================
+#Assign player based on quiz outcome
+if animal_name == 'Pigeon':
+	player = user.User('Pigeon', 100, 60, 60, 40, set(), dict())
+elif animal_name == 'Horseshoe Crab':
+	player = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
+elif animal_name == 'Banana Slug':
+	player = user.User('Banana Slug', 100, 40, 30, 80, set(), dict())
+else: #otherwise squirrel
+	player = user.User('Squirrel', 100, 50, 60, 60, set(), dict())
 
+player.print_user_stats()
 
+#===================================================
 
+print('You find yourself on the Cold Spring Harbor Laboratories Campus')
 
+#call the weapon choice script
+weapon_choice.choose_weapon(player)
 
+#===================================================
 
+#call little vinny's encounter
+little_vinnys.foraging(player)
 
+#==================================================
+
+#call riddles encounter
+#riddle_encounter.answer_riddles(player)

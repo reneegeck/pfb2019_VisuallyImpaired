@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import user, weapon_choice, little_vinnys
+import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon
 
 #======================================================
 from print_quiz import decode
@@ -115,21 +115,63 @@ elif animal_name == 'Banana Slug':
 else: #otherwise squirrel
 	player = user.User('Squirrel', 100, 50, 60, 60, set(), dict())
 
+time.sleep(2)
 player.print_user_stats()
+time.sleep(5)
+print('\n\n\n')
 
 #===================================================
 
-print('You find yourself on the Cold Spring Harbor Laboratories Campus')
+print('You heft your suitcase out of your Uber and find yourself on the Cold Spring Harbor Laboratories Campus')
+time.sleep(1)
+#ASCII CSHL ART
+print('Mmm so lovely, it smells like fall.')
+print('\n\n')
+time.sleep(3)
+
+print("But you don't let all that nature distract you from your mission.\n")
+time.sleep(2)
+print("You have traveled by plane, train, and car to come here to gain the skills needed to \n\n MASTER THE PYTHON\n\n")
+time.sleep(3)
+print("You and your village have been plagued with inefficient data analysis and server error messages.\n\n")
+time.sleep(2)
+print("You have come seeking the wisdom of CSHL to be worthy of the art of the PYTHON.")
+time.sleep(4)
+print("\n\nBut first, you will need some equipment.\n\n")
+time.sleep(2)
+print("On the lawn in front of you you see some very useful supplies. \n\n")
+time.sleep(2)
 
 #call the weapon choice script
 weapon_choice.choose_weapon(player)
 
+while player.health > 0: #so long as you aren't dead yet...
+#==============================================
+	#Encounter with person who asks you questions to get a healing potion
+
+#================================================
+	#RACCOON FIGHT
+	time.sleep(2)
+	print("You're starting to feel kind of hungry and are about to head off to find some food")
+	time.sleep(2)
+	print("When a giant RACCOON steps out to block your path!")
+	time.sleep(2)
+
+	#call the raccoon fight functions
+	fight_raccoon.raccoon_fight(player)
+
 #===================================================
 
-#call little vinny's encounter
-little_vinnys.foraging(player)
+	#call little vinny's encounter
+	little_vinnys.foraging(player)
 
 #==================================================
 
 #call riddles encounter
 #riddle_encounter.answer_riddles(player)
+#=================================================
+#Die for now to get out of loop
+	player.health = 0
+#============================================================
+player.print_health_bar()
+print('Too bad. So long, friend.')

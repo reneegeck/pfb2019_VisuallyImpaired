@@ -25,8 +25,8 @@ def attack_coon(user, weapon):
 		if heal_choice == 'yes':
 			user.heal(50)
 			user.remove_item('Healing Potion')
+			user.print_health_bar()
 			print('Ahhh. How refreshing. Tastes like strawberries. Much better.')
-			print('Your health is now ', user.health, '/100.', sep='')
 			time.sleep(2)
 			print('\n\n')
 
@@ -72,13 +72,14 @@ def coon_attacks(user):
 		rand_miss = random.randint(0,2)
 		print(coon_miss[rand_miss])
 		points = 0
-		print('Your health is still ', user.health, '/100.', sep='')
+		user.print_health_bar()
 	else: #it hit, now determine damage
 		points = random.randint(5,25)
 		rand_hit = random.randint(0,2)
 		print(coon_hit[rand_hit])
-		print('Your health is now ', user.health-points, '/100.', sep='')
-	return points
+		user.injure(points)
+		user.print_health_bar()
+	return
 
 #==========================================
 
@@ -119,6 +120,7 @@ def pick_weapon_fight(user):
 def raccoon_fight(player):
 	print_ascii.raccoon_pic()
 	print('That raccoon looks pretty intimidating. Are those wolverine claws? Damn. A formidable opponent for certain.')
+	print('You realize you have to fight it. But you must survive to continue your quest for the Python!')
 	time.sleep(3)
 	print('\n\n')
 
@@ -133,7 +135,7 @@ def raccoon_fight(player):
 	#Initialise tihe fight loop
 
 	print('Okay! Time to fight!')
-	print('Remember you have ', player.health,'/100 health.', sep='')
+	player.print_health_bar()
 	time.sleep(2)
 	print('\n\n')
 
@@ -147,9 +149,9 @@ def raccoon_fight(player):
 			print_ascii.sleepy_raccoon_pic()
 			print('That was too much for this raccoon. He passes out where he stands.')
 			print("Huh. He looks much less scary when he's asleep.")
-			time.sleep(3)
+			time.sleep(5)
 			print("\n\nBut wait! What's that behind the raccoon?\n\n")
-			print('LINUX BOOK ASCII HERE')
+			print_ascii.linux_book_pic()
 			print("\n\nA Linux book, cool! That will come in handy later.")
 			player.add_item('Linux Book')
 			time.sleep(3)
@@ -165,8 +167,7 @@ def raccoon_fight(player):
 		time.sleep(2)
 	
 		#raccoon fights you
-		player_damage = coon_attacks(player)
-		player.injure(player_damage)
+		coon_attacks(player)
 
 		print('\n\n')
 		time.sleep(2)
@@ -177,5 +178,3 @@ def raccoon_fight(player):
 
 		print('\n\n')
 		time.sleep(2)
-
-	print('Now, on to the next adventure!')

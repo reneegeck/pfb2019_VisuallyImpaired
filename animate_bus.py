@@ -15,5 +15,5 @@ def moving_bus():
 	for frame in frames:
 		print('\n\n\n\n\n')
 		print("".join(frame))
-		time.sleep(0.8)
+		time.sleep(0.6)
 		os.system('clear')

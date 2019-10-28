@@ -48,3 +48,31 @@ def wizard_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
+
+def horshoecrab_pic():
+	frames = []
+	with open('horseshoe_crab.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def bananaslug_pic():
+	frames = []
+	with open('banana_slug.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def pigeon_pic():
+	frames = []
+	with open('pigeon.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def squirrel_pic():
+	frames = []
+	with open('squirrel.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))

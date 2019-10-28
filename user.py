@@ -128,6 +128,30 @@ class User(object):
 			bar_out = 'Your health is now: {} points|{}| {}%'.format(self.health, bar, percent)
 		print(bar_out)
 
+	def print_speed_bar(self, decimals = 1, length = 100, fill = '█'):
+		color_dict = {'purple' : '\033[95m', 'blue' : '\033[94m', 'green' : '\033[92m', 'yellow' : '\033[93m', 'red' : '\033[91m', 'end' : '\033[0m', 'bold' : '\033[1m', 'underline' : '\033[4m', 'blink' : '\033[5m', 'dim' : '\033[2m'}
+		percent = ("{0:." + str(decimals) + "f}").format(100 * (self.speed / 100))
+		filledLength = int(length * self.speed // 100)
+		bar = color_dict['green'] + fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
+		bar_out = 'Your speed is now: {} points|{}| {}%'.format(self.speed, bar, percent)
+		print(bar_out)
+
+	def print_armor_bar(self, decimals = 1, length = 100, fill = '█'):
+		color_dict = {'purple' : '\033[95m', 'blue' : '\033[94m', 'green' : '\033[92m', 'yellow' : '\033[93m', 'red' : '\033[91m', 'end' : '\033[0m', 'bold' : '\033[1m', 'underline' : '\033[4m', 'blink' : '\033[5m', 'dim' : '\033[2m'}
+		percent = ("{0:." + str(decimals) + "f}").format(100 * (self.armor / 100))
+		filledLength = int(length * self.armor // 100)
+		bar = color_dict['green'] + fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
+		bar_out = 'Your armor is now: {} points|{}| {}%'.format(self.armor, bar, percent)
+		print(bar_out)
+
+	def print_intel_bar(self, decimals = 1, length = 100, fill = '█'):
+		color_dict = {'purple' : '\033[95m', 'blue' : '\033[94m', 'green' : '\033[92m', 'yellow' : '\033[93m', 'red' : '\033[91m', 'end' : '\033[0m', 'bold' : '\033[1m', 'underline' : '\033[4m', 'blink' : '\033[5m', 'dim' : '\033[2m'}
+		percent = ("{0:." + str(decimals) + "f}").format(100 * (self.intel / 100))
+		filledLength = int(length * self.intel // 100)
+		bar = color_dict['green'] + fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
+		bar_out = 'Your intelligence is now: {} points|{}| {}%'.format(self.intel, bar, percent)
+		print(bar_out)
+
 
 #Move to trait quiz (or maybe backbone script?)
 #pigeon has ok armor and speed and is not very intelligent

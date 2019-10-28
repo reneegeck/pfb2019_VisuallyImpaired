@@ -2,13 +2,10 @@
 
 def vinnys_sign():
 	frames = []
-
 	with open('vinnys_sign.txt','r') as f:
 		frames.append(f.readlines())
-
 	for frame in frames:
 		print("".join(frame))
-
 
 def pizza_pic():
 	frames = []
@@ -34,6 +31,13 @@ def raccoon_pic():
 def sleepy_raccoon_pic():
 	frames = []
 	with open('raccoon_sleep_image.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def linux_book_pic():
+	frames = []
+	with open('linux_book_image.txt','r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))

@@ -121,11 +121,11 @@ class User(object):
 		percent = ("{0:." + str(decimals) + "f}").format(100 * (self.health / 100))
 		filledLength = int(length * self.health // 100)
 		if self.health < 5:
-			bar = color_dict['blink'] + color_dict['red'] + fill * filledLength + color_dict['end'] + color_dict['blink'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end'] + color_dict['green']
+			bar = color_dict['blink'] + color_dict['red'] + fill * filledLength + color_dict['end'] + color_dict['blink'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
 			bar_out = '{}hp|{}| {}%'.format(self.health, bar, percent)
 		else:
-			bar = fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end'] + color_dict['green']
-			bar_out = '{}hp|{}| {}%'.format(self.health, bar, percent)
+			bar = fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
+			bar_out = 'Your health is now: {} points|{}| {}%'.format(self.health, bar, percent)
 		print(bar_out)
 
 

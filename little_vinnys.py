@@ -31,7 +31,7 @@ if answer.lower() == 'yes':
 				print_ascii.pizza_pic()
 				player.heal(20) #Add health points, check if this works tomorrow
 				print("The pizza gives you life."+'\n')
-				user.print_health_bar()
+				player.print_health_bar()
 
 			elif vinnys.lower() == 'no':
 				print("I think you're mistaken. Try again.")
@@ -42,18 +42,51 @@ if answer.lower() == 'yes':
 		time.sleep(2)
 		animate_bus.moving_bus()
 		print('\n'+"You're back on campus and go to the Clarkson dining hall."+'\n')
+		time.sleep(1.5)
+		print("At the dining hall you run into Matty Two Soups.\n")
+		time.sleep(1.5)
+		print("What a pleasure!\n")
+		time.sleep(2)
+		print("He offers you one of his soups.")
+		time.sleep(1.5)
+		print_ascii.soup_pic()
+		soup_answer = 'No'
+	
+		while soup_answer.lower() == 'no':
+			soup_answer = input("Do you want to accept Matty Two Soups kind offer and have some soup? Yes or no? ")	
 
+			if soup_answer.lower() == 'yes':
+				print("\nOf course you want to share some soup with Matty Two Soups!\n")
+				time.sleep(1)
+				print("The soup has healing powers and makes you feel refreshed.\n")
+				player.heal(20)
+				player.print_health_bar()
+
+			elif soup_answer.lower() == 'no':
+				print("Matty Two Soups doesn't take no for an answer! Try again.\n")
+				continue			
+	
 elif answer.lower() == 'no':
 	print("Alright! You go to the Clarkson dining hall instead.")
-	time.sleep(1)
-	print("At the dining hall you run into Matty Two Soups.\n\nWhat a pleasure!\n\nHe offers you one of his soups.")
+	time.sleep(1.5)
+	print("At the dining hall you run into Matty Two Soups.\n")
+	time.sleep(1.5)
+	print("What a pleasure!\n")
+	time.sleep(2)
+	print("He offers you one of his soups.")
+	time.sleep(1.5)
 	print_ascii.soup_pic()
-	soup_answer = input("Do you want to accept Matty Two Soups kind offer and have some soup? Yes or no? ")
+	soup_answer = 'No'
 
-	if soup_answer.lower() == 'yes':
-		print("Of course you want to share some soup with Matty Two Soups!")
-		time.sleep(1)
-		print("The soup has healing powers and makes you feel refreshed.")
-		player.heal(20)
-		player.print_health_bar()	
+	while soup_answer.lower() == 'no':
+		soup_answer = input("Do you want to accept Matty Two Soups kind offer and have some soup? Yes or no? ")
+		if soup_answer.lower() == 'yes':
+			print("\nOf course you want to share some soup with Matty Two Soups!\n")
+			time.sleep(1)
+			print("The soup has healing powers and makes you feel refreshed.\n")
+			player.heal(20)
+			player.print_health_bar()	
 
+		elif soup_answer.lower() == 'no':
+			print("Matty Two Soups doesn't take no for an answer! Try again.\n")
+			continue

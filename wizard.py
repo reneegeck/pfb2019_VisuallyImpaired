@@ -6,6 +6,7 @@ import subprocess
 import time
 from print_wizard import decode, input1, input2, input3
 from animate_dice import blinking_dice
+from  print_ascii import wizard_pic
 user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	
@@ -143,6 +144,7 @@ def wizard_fight(user):
 
 def wizard_encounter(user):
 	print('You stumbled on Simon the Wizard of Cold Spring Harbor')
+	wizard_pic()
 	subprocess.run(["say","-v","Daniel","Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?"])
 	q1 = input3('')
 	while q1 not in ['yes','no']:

@@ -2,7 +2,7 @@
 
 import time, user, animate_bus, print_ascii
 
-
+player = user.User('Pigeon', 100, 60, 60, 40, set(), dict())
 #encounter to take trip to Little Vinny's 
 #def foraging(player):
 print("You see a shuttle in the parking lot. Do you want to get on it?")
@@ -36,14 +36,24 @@ if answer.lower() == 'yes':
 			elif vinnys.lower() == 'no':
 				print("I think you're mistaken. Try again.")
 				continue
-	
+
 	elif get_off_bus.lower() == 'no':
 		print('\n'+"Alright, back to CSHL!"+'\n')
 		time.sleep(2)
 		animate_bus.moving_bus()
 		print('\n'+"You're back on campus and go to the Clarkson dining hall."+'\n')
 
-
-
 elif answer.lower() == 'no':
-	print("Alright! You go somewhere else instead.")
+	print("Alright! You go to the Clarkson dining hall instead.")
+	time.sleep(1)
+	print("At the dining hall you run into Matty Two Soups.\n\nWhat a pleasure!\n\nHe offers you one of his soups.")
+	print_ascii.soup_pic()
+	soup_answer = input("Do you want to accept Matty Two Soups kind offer and have some soup? Yes or no? ")
+
+	if soup_answer.lower() == 'yes':
+		print("Of course you want to share some soup with Matty Two Soups!")
+		time.sleep(1)
+		print("The soup has healing powers and makes you feel refreshed.")
+		player.heal(20)
+		player.print_health_bar()	
+

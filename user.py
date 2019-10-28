@@ -117,14 +117,14 @@ class User(object):
 		print('Speed:', self.speed)
 
 	def print_health_bar(self, decimals = 1, length = 100, fill = '█'):
-		color_dict = {'purple' : '\033[95m', 'blue' : '\033[94m', 'green' : '\033[92m', 'yellow' : '\033[93m', 'red' : '\033[91m', 'end' : '\033[0m', 'bold' : '\033[1m', 'underline' : '\033[4m', 'blink' : '\033[5m', 'dim' : '\033[2m',}
+		color_dict = {'purple' : '\033[95m', 'blue' : '\033[94m', 'green' : '\033[92m', 'yellow' : '\033[93m', 'red' : '\033[91m', 'end' : '\033[0m', 'bold' : '\033[1m', 'underline' : '\033[4m', 'blink' : '\033[5m', 'dim' : '\033[2m'}
 		percent = ("{0:." + str(decimals) + "f}").format(100 * (self.health / 100))
 		filledLength = int(length * self.health // 100)
 		if self.health < 5:
 			bar = color_dict['blink'] + color_dict['red'] + fill * filledLength + color_dict['end'] + color_dict['blink'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
-			bar_out = '{}hp|{}| {}%'.format(self.health, bar, percent)
+			bar_out = 'Your health is now: {} points|{}| {}%'.format(self.health, bar, percent)
 		else:
-			bar = fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
+			bar = fill * filledLength + color_dict['green'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['green'] + color_dict['end']
 			bar_out = 'Your health is now: {} points|{}| {}%'.format(self.health, bar, percent)
 		print(bar_out)
 

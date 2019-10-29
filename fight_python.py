@@ -4,6 +4,8 @@ import user
 import random
 import time
 import print_ascii
+import os
+import subprocess
 
 #===========================================
 
@@ -140,6 +142,7 @@ def pick_weapon_fight(user):
 #ACTUAL FIGHT
 
 def python_fight(player):
+	os.system('clear')
 	print("And then you see it\n\n")
 	time.sleep(2)
 	print("What you've been looking for this whole time\n\n")
@@ -152,7 +155,9 @@ def python_fight(player):
 	time.sleep(2)
 	print("To battle and prove your worth to the PYTHON.\n\n")
 	time.sleep(4)
-
+	
+	input('Press any key to continue.\n\n')
+	
 	#Go through inventory and repot what helpful things you have
 	print("First, you recall what you have learned.\n\n")
 	time.sleep(2)
@@ -211,12 +216,13 @@ def python_fight(player):
 	#start the fight
 	pyth_health = 100
 
-	fight_yes = input('Are you ready to fight the PYTHON? ')
+	print('Are you ready to fight the PYTHON?')
+	fight_yes = input('Say yes! ')
 	fight_yes = fight_yes.lower()
 	while fight_yes not in ['yes']: #too bad you have to fight it!
 		print("Kind of late for second thoughts.")
 		print("You really don't have a choice at this point.")
-		fight_yes = input('Are you ready to fight the PYTHON? ')
+		fight_yes = input('Are you ready to fight the PYTHON? Say yes! ')
 		fight_yes = fight_yes.lower()
 
 	print('\n\n')
@@ -272,9 +278,18 @@ def python_fight(player):
 		print_ascii.cute_python_pic()
 		time.sleep(4)
 		print("Simon and Sofia look on respectfully.\n\n")
-		time.sleep(2)
+		time.sleep(1)
+		subprocess.run(['say', '-v', 'Daniel', 'Well done!'])
+		subprocess.run(['say', '-v', 'Samantha', 'Great job!'])
 		print("Maybe they will ask you to TA next year...\n\n")
 		time.sleep(2)
 		print("Triumphant, you saunter off to the bar. You deserve a beer.\n\n")
-		#ASCII BEER ART
-		#ASCII THE END
+		print_ascii.beer_pic()
+		time.sleep(4)
+		os.system('clear')
+		print('\n\n\n\n')
+		print_ascii.end_pic()
+	else: #otherwise you died
+		print("\n\nSo close, yet so far.\n\n")
+		time.sleep(1)
+		print("Better luck next time!")

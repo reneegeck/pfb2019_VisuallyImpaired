@@ -122,10 +122,10 @@ class User(object):
 		filledLength = int(length * self.health // 100)
 		if self.health < 11:
 			bar = color_dict['blink'] + color_dict['red'] + fill * filledLength + color_dict['end'] + color_dict['blink'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
-			bar_out = 'Your health is {:>3} points     |{}| {}%'.format(self.health, bar, percent)
+			bar_out = 'Your health is  {:>3} points     |{}| {}%'.format(self.health, bar, percent)
 		else:
 			bar = color_dict['green'] + fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
-			bar_out = 'Your health is {:>3} points     |{}| {}%'.format(self.health, bar, percent)
+			bar_out = 'Your health is  {:>3} points     |{}| {}%'.format(self.health, bar, percent)
 		print(bar_out)
 
 	def print_speed_bar(self, decimals = 1, length = 100, fill = '█'):
@@ -133,7 +133,7 @@ class User(object):
 		percent = ("{0:." + str(decimals) + "f}").format(100 * (self.speed / 100))
 		filledLength = int(length * self.speed // 100)
 		bar = color_dict['green'] + fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
-		bar_out = 'Your speed is {:>3} points       |{}| {}%'.format(self.speed, bar, percent)
+		bar_out = 'Your speed is  {:>3} points      |{}| {}%'.format(self.speed, bar, percent)
 		print(bar_out)
 
 	def print_armor_bar(self, decimals = 1, length = 100, fill = '█'):
@@ -141,7 +141,7 @@ class User(object):
 		percent = ("{0:." + str(decimals) + "f}").format(100 * (self.armor / 100))
 		filledLength = int(length * self.armor // 100)
 		bar = color_dict['green'] + fill * filledLength + color_dict['end'] + color_dict['dim'] + fill * (length - filledLength) + color_dict['end']
-		bar_out = 'Your armor is {:>3} points       |{}| {}%'.format(self.armor, bar, percent)
+		bar_out = 'Your armor is  {:>3} points      |{}| {}%'.format(self.armor, bar, percent)
 		print(bar_out)
 
 	def print_intel_bar(self, decimals = 1, length = 100, fill = '█'):

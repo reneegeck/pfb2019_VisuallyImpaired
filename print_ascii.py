@@ -107,14 +107,14 @@ def CSHL_logo():
 
 def scary_python_pic():
 	frames = []
-	with open('scary_python.txt','r') as f:
+	with open('scary_python.py','r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
 
 def cute_python_pic():
 	frames = []
-	with open('cute_python.txt','r') as f:
+	with open('cute_python.py','r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
@@ -150,6 +150,13 @@ def mysteryman_pic():
 def sphinx_pic():
 	frames = []
 	with open('sphnix.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def dagger_pic():
+	frames = []
+	with open('dagger.txt', 'r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))

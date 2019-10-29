@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import time, user, animate_bus, print_ascii
+import time, user, animate_bus, print_ascii, os
 
-#player = user.User('Pigeon', 4, 60, 60, 40, set(), dict())
 #encounter to take trip to Little Vinny's 
 def foraging(player):
+	os.system('clear')
 	print("You see a shuttle in the parking lot. Do you want to get on it?")
 	answer = ''
 
@@ -26,13 +26,18 @@ def foraging(player):
 					vinnys = input("Do you want to get a slice? Yes or no? ")
 
 					if vinnys.lower() == 'yes':
-						print("Of course you want a slice!")
+						print("\nOf course you want a slice!")
 						print('\n\n\n')
 						time.sleep(1)
 						print_ascii.pizza_pic()
+						time.sleep(2)
 						player.heal(20) 
 						print("The pizza gives you life."+'\n')
-						player.print_health_bar()
+						player.print_health_bar()					
+						time.sleep(3)
+						print('\n\nTime to head back to CSHL!\n')
+						input('Press any key to get on the shuttle. ')
+						animate_bus.moving_bus()						
 
 					elif vinnys.lower() == 'no':
 						print("I think you're mistaken. Try again.")
@@ -60,6 +65,7 @@ def foraging(player):
 						print("\nOf course you want to share some soup with Matty Two Soups!\n")
 						time.sleep(1)
 						print("The soup has healing powers and makes you feel refreshed.\n")
+						time.sleep(1.5)	
 						player.heal(20)
 						player.print_health_bar()
 
@@ -85,6 +91,7 @@ def foraging(player):
 					print("\nOf course you want to share some soup with Matty Two Soups!\n")
 					time.sleep(1)
 					print("The soup has healing powers and makes you feel refreshed.\n")
+					time.sleep(1.5)
 					player.heal(20)
 					player.print_health_bar()	
 
@@ -93,3 +100,5 @@ def foraging(player):
 					continue
 		else:
 			continue
+
+	input('Press any key to continue\n')

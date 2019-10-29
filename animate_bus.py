@@ -4,7 +4,7 @@ def moving_bus():
 	import os, time
 
 	os.system('clear')
-	filenames = ['ascii_art/bus7.txt','ascii_art/bus6.txt','ascii_art/bus5.txt','ascii_artbus4.txt','ascii_art/bus3.txt','acsii_art/bus2.txt','ascii_art/bus1.5.txt','ascii_art/bus1.4.txt','ascii_art/bus1.3.txt','ascii_art/bus1.2.txt', 'ascii_art/bus1.txt', 'ascii_art/bus.txt']
+	filenames = ['ascii_art/bus7.txt','ascii_art/bus6.txt','ascii_art/bus5.txt','ascii_art/bus4.txt','ascii_art/bus3.txt','ascii_art/bus2.txt','ascii_art/bus1.5.txt','ascii_art/bus1.4.txt','ascii_art/bus1.3.txt','ascii_art/bus1.2.txt', 'ascii_art/bus1.txt', 'ascii_art/bus.txt']
 
 	frames = []
 

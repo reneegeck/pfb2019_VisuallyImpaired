@@ -179,6 +179,7 @@ while player.health > 0: #so long as you aren't dead yet...
 
 #================================================
 	#RACCOON FIGHT
+	os.system("clear")
 	time.sleep(2)
 	print("You're starting to feel kind of hungry and are about to head off to find some food")
 	time.sleep(2)
@@ -187,12 +188,16 @@ while player.health > 0: #so long as you aren't dead yet...
 
 	#call the raccoon fight functions
 	fight_raccoon.raccoon_fight(player)
-
+	#end game if you die
+	if user.health < 1:
+		break
 #==================================================
 
 #apple random encouter
-
-
+	Random_encouters.random_en1(player)	
+	#end game if you die
+	if user.health < 1:
+		break
 
 #===================================================
 
@@ -201,17 +206,35 @@ while player.health > 0: #so long as you aren't dead yet...
 
 #==================================================
 
+#pinecone random encouter
+	Random_encouters.random_en2(player)
+
+#=================================================
+
 #call riddles encounter
 #riddle_encounter.answer_riddles(player)
-#bread enconounter
+
+#================================================
+
+#bread random enconounter
+	Random_encounters.random_en4(player)
+	#you may or may not have bread in your inventory
 
 #=================================================
 
 #call wizard
-	os.system('clear')
 	wizard.wizard_encounter(player)
 
-#call random encounter regex
+#================================================
+
+#REGEX quiz random encounter
+	#difficulty is determined by player's current intelligence stat
+	Random_encounters.random_en3(player)
+	#you may or may not have aquired a health potion
+
+#================================================
+
+#Python fight script
 
 #=================================================
 #Die for now to get out of loop

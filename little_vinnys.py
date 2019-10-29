@@ -5,7 +5,7 @@ import time, user, animate_bus, print_ascii, os
 #encounter to take trip to Little Vinny's 
 def foraging(player):
 	os.system('clear')
-	print("You see a shuttle in the parking lot. Do you want to get on it?")
+	print("\n\n\nYou see a shuttle in the parking lot. Do you want to get on it?\n")
 	answer = ''
 
 	while answer.lower() not in ['yes','no']:
@@ -36,7 +36,7 @@ def foraging(player):
 						player.print_health_bar()					
 						time.sleep(3)
 						print('\n\nTime to head back to CSHL!\n')
-						input('Press any key to get on the shuttle. ')
+						input('Press enter to get on the shuttle. ')
 						animate_bus.moving_bus()						
 
 					elif vinnys.lower() == 'no':
@@ -101,4 +101,4 @@ def foraging(player):
 		else:
 			continue
 
-	input('Press any key to continue\n')
+	input('Press enter to continue\n')

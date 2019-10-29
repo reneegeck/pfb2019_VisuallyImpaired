@@ -34,5 +34,5 @@ def choose_weapon(player):
 						player.add_weapon(chosenWeapon) #add to set of weapons
 					print('\n\nGreat! You are now armed with a ', chosenWeapon, '.', sep='')
 					time.sleep(3)
+					input('\nPress enter to continue. ')
 					return player
-

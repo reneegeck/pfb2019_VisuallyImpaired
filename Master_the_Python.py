@@ -3,7 +3,7 @@
 #======================================================
 #      REQUIRED MODULES
 
-import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon, wizard, os, fight_python #,Random_encouters
+import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon, wizard, os, fight_python, Random_encouters
 
 #======================================================
 from print_quiz import decode
@@ -174,8 +174,6 @@ time.sleep(2)
 weapon_choice.choose_weapon(player)
 
 while player.health > 0: #so long as you aren't dead yet...
-#==============================================
-	#Encounter with person who asks you questions to get a healing potion
 
 #================================================
 	#RACCOON FIGHT
@@ -194,7 +192,7 @@ while player.health > 0: #so long as you aren't dead yet...
 #==================================================
 
 #apple random encouter
-	#Random_encouters.random_en1(player)	
+	Random_encouters.random_en1(player)	
 	#end game if you die
 	if player.health < 1:
 		break
@@ -207,7 +205,7 @@ while player.health > 0: #so long as you aren't dead yet...
 #==================================================
 
 #pinecone random encouter
-	#Random_encouters.random_en2(player)
+	Random_encouters.random_en2(player)
 
 #=================================================
 
@@ -217,7 +215,7 @@ while player.health > 0: #so long as you aren't dead yet...
 #================================================
 
 #bread random enconounter
-	#Random_encouters.random_en4(player)
+	Random_encouters.random_en4(player)
 	#you may or may not have bread in your inventory
 
 #=================================================
@@ -229,14 +227,14 @@ while player.health > 0: #so long as you aren't dead yet...
 
 #REGEX quiz random encounter
 	#difficulty is determined by player's current intelligence stat
-	#Random_encouters.random_en3(player)
+	Random_encouters.random_en3(player)
 	#you may or may not have aquired a health potion
 
 #================================================
 
 #Python fight!
 	fight_python.python_fight(player)
-
+	break
 #=================================================
 #Die for now to get out of loop
 	#player.health = 0

@@ -160,3 +160,38 @@ def dagger_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
+
+def beer_pic():
+	frames = []
+	with open('beer_pic.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def pinecone_pic():
+	frames = []
+	with open('pinecone.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def end_pic():
+	frames = []
+	with open('the_end.txt', 'r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def game_over_pic():
+	frames = []
+	with open('game_over.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def swan_pic():
+	frames = []
+	with open('code_swan.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))

@@ -25,7 +25,7 @@ def wizard_gift(user):
 		user.print_health_bar() 
 		user.print_intel_bar()
 		time.sleep(2)
-		print('Now you have '+ ",".join(user.inventory['items'] + 'in your inventory' ))
+		print('Now you have '+ ",".join.user.inventory['items'] + 'in your inventory' )
 	else:
 		pie_pic()
 		print("Oh! Looks like you had indigestion of cherry pie and will spend 50 minutes in the wizard's toilet.. and there is no toilet paper!")
@@ -126,7 +126,7 @@ def wizard_fight(user):
 		user.print_health_bar()
 		user.print_intel_bar()
 		print('And you have:')
-		print(",".join(user.inventory['items']))
+		print(",".join.user.inventory['items'])
 		if 'Python2' in user.inventory['items']:
 			print("Do you want to try to upgrade to Python3?")
 			subprocess.run(["say","-v","Daniel","Do you want to try to upgrade to Python3?"])
@@ -163,7 +163,7 @@ def wizard_fight(user):
 						user.add_item('Python3')
 						user.print_health_bar()	
 						user.print_intel_bar()
-						print('Now you have '+ ",".join(user.inventory['items'] + 'in your inventory' )
+						print('Now you have '+ ",".join.user.inventory['items'] + 'in your inventory' )
 					else:
 						print("The swan bite you and you are running away, go to the next level")
 						subprocess.run(["say","-v","Daniel","the swan bite you and you are running away, go to the next level"])
@@ -186,7 +186,7 @@ def wizard_fight(user):
 						user.add_item('Python3')
 						user.print_health_bar()
 						user.print_intel_bar()
-						print('Now you have '+ ",".join(user.inventory['items'] + 'in your inventory' )
+						print('Now you have '+ ",".join.user.inventory['items'] + 'in your inventory' )
 			else:
 				print("You are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level")
 				subprocess.run(["say", "-v", "Daniel", "you are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level"])
@@ -202,7 +202,7 @@ def wizard_fight(user):
 		subprocess.run(["say","-v","Daniel","You are fine burglar! You have the mystic powers of Python3 scripting! Now you are 50 point smarter and you are ready for the next level"])
 		user.print_health_bar()
 		user.print_intel_bar()
-		print('Now you have '+ ",".join(user.inventory['items'] + 'in your inventory' )
+		print('Now you have '+ ",".join.user.inventory['items'] + 'in your inventory' )
 	input("Press ENTER to continue ")
 	return user
 

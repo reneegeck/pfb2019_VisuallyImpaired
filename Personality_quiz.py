@@ -108,12 +108,16 @@ else:
 #Assign player based on quiz outcome
 if animal_name == 'Pigeon':
 	player = user.User('Pigeon', 100, 60, 60, 40, set(), dict())
+	print_ascii.pigeon_pic()
 elif animal_name == 'Horseshoe Crab':
 	player = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
+	print_ascii.horseshoecrab_pic()
 elif animal_name == 'Banana Slug':
 	player = user.User('Banana Slug', 100, 40, 30, 80, set(), dict())
+	print_ascii.bananaslug_pic()
 else: #otherwise squirrel
 	player = user.User('Squirrel', 100, 50, 60, 60, set(), dict())
+	print_ascii.squirrel_pic()
 
 time.sleep(2)
 player.print_user_stats()
@@ -124,15 +128,17 @@ print('\n\n\n')
 
 print('You heft your suitcase out of your Uber and find yourself on the Cold Spring Harbor Laboratories Campus')
 time.sleep(1)
-#ASCII CSHL ART
+print_ascii.CSHL_logo()			#ASCII CSHL ART
 print('Mmm so lovely, it smells like fall.')
 print('\n\n')
 time.sleep(3)
 
 print("But you don't let all that nature distract you from your mission.\n")
 time.sleep(2)
-print("You have traveled by plane, train, and car to come here to gain the skills needed to \n\n MASTER THE PYTHON\n\n")
-time.sleep(3)
+print("You have traveled by plane, train, and car to come here to gain the skills needed to... \n\n")
+time.sleep(1.5)
+print_ascii.master_the_python_pic()
+time.sleep(2.5)
 print("You and your village have been plagued with inefficient data analysis and server error messages.\n\n")
 time.sleep(2)
 print("You have come seeking the wisdom of CSHL to be worthy of the art of the PYTHON.")

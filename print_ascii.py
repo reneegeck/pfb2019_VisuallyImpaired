@@ -76,13 +76,11 @@ def squirrel_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
-
-def axe_pic():
+    
+def master_the_python_pic():
 	frames = []
-	with open('axe.txt','r') as f:
+	with open('master_the_python.txt','r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
-
-
 

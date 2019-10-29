@@ -61,7 +61,7 @@ class User(object):
 
 	def get_dumber(self, dumb_points): #can never be less than 10
 		if self.intel in range(10+dumb_points,100):
-			self.intel -= intel_points
+			self.intel -= dumb_points
 		else: 
 			self.intel = 10
 

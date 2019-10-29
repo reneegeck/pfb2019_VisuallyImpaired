@@ -134,10 +134,15 @@ def raccoon_fight(player):
 
 	#Initialise tihe fight loop
 
-	print('Okay! Time to fight!')
+	print('Okay! Time to fight!\n\n')
 	player.print_health_bar()
 	time.sleep(2)
-	print('\n\n')
+	print('Are you ready?')
+	say_yes = input('Say yes!')
+	while say_yes.lower() not in ['yes']:
+		print("\n\nAt least give it a try!")
+		say_yes = input('Say yes!')
+	print('\n\nYou take a swing at the raccoon.\n\n')
 
 	fight_choice = True
 	while fight_choice == True:
@@ -147,7 +152,7 @@ def raccoon_fight(player):
 		coon_health -= coon_damage
 		if coon_health < 1:
 			print_ascii.sleepy_raccoon_pic()
-			print('That was too much for this raccoon. He passes out where he stands.')
+			print('That was too much for this raccoon. He passes out where he stands.\n\n')
 			print("Huh. He looks much less scary when he's asleep.")
 			time.sleep(5)
 			print("\n\nBut wait! What's that behind the raccoon?\n\n")
@@ -165,7 +170,13 @@ def raccoon_fight(player):
 		print(coon_attack_say[rand_coon_say])
 		print('\n\n')
 		time.sleep(2)
-	
+		print("Are you ready to go on the defensive?\n\n")
+		better_say_yes = input('Say yes!')
+		while better_say_yes.lower() is not in ['yes']:
+			print("Defend yourself! Are you ready?\n\n")
+			better_say_yes = input('Say yes!')
+		print('\n\n')
+
 		#raccoon fights you
 		coon_attacks(player)
 

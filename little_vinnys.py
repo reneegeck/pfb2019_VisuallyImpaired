@@ -74,7 +74,7 @@ def foraging(player):
 						continue			
 	
 		elif answer.lower() == 'no':
-			print("Alright! You go to the Clarkson dining hall instead.")
+			print("\nAlright! You go to the Clarkson dining hall instead.\n")
 			time.sleep(1.5)
 			print("At the dining hall you run into Matty Two Soups.\n")
 			time.sleep(1.5)

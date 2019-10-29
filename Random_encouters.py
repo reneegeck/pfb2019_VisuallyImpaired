@@ -4,6 +4,7 @@ import random
 import time
 import sys
 from print_quiz import re_input_easy, re_input_med, re_input_hard
+import print_ascii
 
 player = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
@@ -11,10 +12,11 @@ def random_en1(user):
 	#find sketch food, do you eat it?
 	#if you choose to eat the apple, there's a 50% chance it will injure you and a 50% chance it will heal you
 	#print apple art
+	print_ascii.apple_pic()
 	print("You found an apple, just sitting there on the ground. It looks very appetizing, but it's kind of strange that someone left it here. What do you do?")
 	print("A) Eat the apple or B) Don't eat the apple")
 	en1_ans = input('>>> ')
-	while en1_ans not in ['a','b']
+	while en1_ans not in ['a','b']:
 		print("There's only two choices, it's not that hard. Don't hurt yourself, try again.")
 		en1_ans = input('>>> ')
 	if en1_ans.lower() == 'a':
@@ -37,6 +39,7 @@ def random_en2(user):
   print("A mysterious man approaches you.")
   time.sleep(2)
   #print man image
+	print_ascii.mysteryman_pic()
   print("He hands you an ordinary-looking dirty pinecone.")
   time.sleep(2)
   #print pinecone image
@@ -56,6 +59,7 @@ def random_en2(user):
 random_en2(player)
 
 def random_en3(user):
+	print_ascii.sphnix_pic()
   print("Shasta the Sphinx walks up to you.")
   #text color change
   print("\033[32mAnswer my questions and I will give you a prize!\033[m")
@@ -96,6 +100,7 @@ def random_en3(user):
       print("That makes no sense. What did you say?")
       re_h = re_input_hard('')
     if re_h.lower() == 'b':
+      print_ascii.healthpotion()
       print("Congrats! You chose the correct answer. All that studying is paying off.")
       print("Shasta hands you a health potion. Sweet!")
       user.add_item('Health Potion')
@@ -106,7 +111,8 @@ random_en3(player)
 
 #make mini-encounter before swan fight, yields "Bread"
 def random_en4(user):
-  print("Joe walks by and offers you some bread from the cafeteria. It looks like normal bread, but why is he giggling? Do you take the bread?")
+   print_ascii.bread_pic()
+	 print("Joe walks by and offers you some bread from the cafeteria. It looks like normal bread, but why is he giggling? Do you take the bread?")
   print("A) Yes or  B) No")
   en4_ans = input(">>> ")
   print(en4_ans)
@@ -134,34 +140,6 @@ def random_en4(user):
   else:
     print("Mom said never to take candy from strangers. You walk away from Joe.")
 random_en4(player)
-
-
-#this is redundant, take it out or re-skin it
-#Matty 2-soups encounter
-#def random_en4(self):
-#	print("A sudden fog descends. From the mist, MATTY 2-SOUPS emerges")
-#	print("He offers you one of his soups. Which do you take?")
-#	print("A) Chicken Noodle or B) Tomato bisque")
-#	answer = input('>>>')
-#	if en4_ans.lower() == 'a':
-#		print("Delicious! So much soup, a naps seems nice right now... +10 health -5 speed")
-#		player.speed(-5)
-#		player.heal(10)
-#	elif en4_ans.lower() == 'b':
-#		print("Hey, this wasn't tomato bisque! It was some sort of magic sludge... +5 intelligence -5 health")
-#	else:
-#		print("Don't mess around with MATTY 2-SOUPS....which do you want?")
-	print(".")
-	time.sleep(1) 
-	print(".")
-	time.sleep(1)
-	print(".")
-	time.sleep(1)
-	print("Hmmm... MATTY 1-SOUP still has his remaining soup. He seems kinda attached to it though. Should you try to take it from him?")
-	
-
-#coffee encounter +speed, repeat?
-
 
 
 

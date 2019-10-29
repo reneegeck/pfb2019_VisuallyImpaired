@@ -190,7 +190,8 @@ while player.health > 0: #so long as you aren't dead yet...
 	if player.health < 1:
 		break
 	print("You're feeling a little hungry after all that exercise...")
-	time.sleep(3)
+	time.sleep(1)
+	input('\nPress enter to continue.')
 
 #==================================================
 

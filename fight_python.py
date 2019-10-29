@@ -93,7 +93,7 @@ def attack_python(user, weapon):
 
 def pyth_attacks(user):
 
-	#make some response options CHANGE THESE
+	#make some response options
 	pyth_miss = ["The PYTHON darts towards you but misses.", "You feel its fangs pass over your head, but they don't hit. Lucky you!", "Its fangs graze you, but don't draw blood. Safe - for now. Unless it's poisonous..."]
 	pyth_hit = ["Oh no! The PYTHON stabs you with his fangs!","Ow, that hurt. Watch out for those fangs!","The python squeezes you, crushing the breath out of your fragile body. Ouch."]
 
@@ -144,9 +144,10 @@ def python_fight(player):
 	time.sleep(2)
 	print("What you've been looking for this whole time\n\n")
 	time.sleep(2)
-	print("THE PYTHON")
 	print_ascii.scary_python_pic()
-	time.sleep(5)
+	time.sleep(2)
+	print("\n\nTHE PYTHON\n\n")
+	time.sleep(3)
 	print("You both know that there is only one reason you are here.\n\n")
 	time.sleep(2)
 	print("To battle and prove your worth to the PYTHON.\n\n")
@@ -197,13 +198,13 @@ def python_fight(player):
 
 	#pick a weapon
 	weapon = pick_weapon_fight(player)
+	print('\n\n')
 	if weapon == 'sword':
 		print_ascii.sword_pic()
 	elif weapon == 'axe':
 		print_ascii.axe_pic()
 	else:
-		#print_ascii.dagger_pic()
-		print('There will be a dagger picture')
+		print_ascii.dagger_pic()
 	time.sleep(2)
 	print('\n\n')
 

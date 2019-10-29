@@ -214,7 +214,7 @@ def python_fight(player):
 	print('\n\n')
 
 	#start the fight
-	pyth_health = 10
+	pyth_health = 100
 
 	print('Are you ready to fight the PYTHON?')
 	fight_yes = input('Say yes! ')

@@ -23,7 +23,7 @@ def wizard_gift(user):
 		print('Wow, that mushroom made you:')
 		user.print_health_bar() 
 		user.print_intel_bar()
-		print(",".join(user.inventory['items'])
+		print(",".join(user.inventory['items']))
 		print("And you aquired the key to the gate that leads to inner realms of higher consciousness, hope you have a great time in the next level")
 		subprocess.run(["say","-v","Daniel","And you aquired the key to the gate that leads to inner realms of higher consciousness, hope you have a great time in the next level"])
 	else:
@@ -121,7 +121,7 @@ def wizard_fight(user):
 		user.print_health_bar()
 		user.print_intel_bar()
 		print('And you have:')
-		print(",".join(user.inventory['items'])
+		print(",".join(user.inventory['items']))
 		if 'Python2' in user.inventory['items']:
 			print("Do you want to try to upgrade to Python3?")
 			subprocess.run(["say","-v","Daniel","Do you want to try to upgrade to Python3?"])
@@ -158,7 +158,7 @@ def wizard_fight(user):
 						user.add_item('Python3')
 						user.print_health_bar()	
 						user.print_intel_bar()
-						print(",".join(user.inventory['items'])
+						print(",".join(user.inventory['items']))
 					else:
 						print("The swan bite you and you are running away, go to the next level")
 						subprocess.run(["say","-v","Daniel","the swan bite you and you are running away, go to the next level"])
@@ -181,7 +181,7 @@ def wizard_fight(user):
 						user.add_item('Python3')
 						user.print_health_bar()
 						user.print_intel_bar()
-						print(",".join(user.inventory['items'])
+						print(",".join(user.inventory['items']))
 			else:
 				print("You are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level")
 				subprocess.run(["say", "-v", "Daniel", "you are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level"])
@@ -199,7 +199,7 @@ def wizard_fight(user):
 		user.print_health_bar()
 		user.print_intel_bar()
 		print('And you have:')
-		print(",".join(user.inventory['items'])
+		print(",".join(user.inventory['items']))
 	input("Press any key to continue ")
 	return user
 

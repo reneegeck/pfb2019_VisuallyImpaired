@@ -4,7 +4,6 @@ from colorama import Fore, Style
 
 riddle_dict = { 'Question 1' : '"Immature I am earthbound, but when I change, the sky I"ve found"',  'Question 2' : '"Greatest man nor tallest tree, Begins as any more than me"', 'Question 3' : '"I grow larger the more you take and yet I shrink the more you add"', 'Question 4' : '"You can catch me, but never throw me. What am I?"', 'Question 5' : "'What has one eye but can’t see?'" }
 
-test_player = user.User('Pigeon', 100, 60, 60, 40, set(), dict())
 
 class color:
    PURPLE = '\033[95m'
@@ -231,5 +230,3 @@ def answer_riddles(user):
 	subprocess.run(["say", "-v", "Samantha", "By the way, there was a weird man dressed in a wizard's robe staggering around on campus. I think he might be drunk. Anyway, you should go and talk to him"])
 
 
-answer_riddles(test_player)
-#print(correct_answers)

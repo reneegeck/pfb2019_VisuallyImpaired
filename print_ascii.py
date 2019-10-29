@@ -119,3 +119,37 @@ def cute_python_pic():
 	for frame in frames:
 		print("".join(frame))
 
+def apple_pic():
+	frames = []
+	with open('apple.txt', 'r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def bread_pic():
+	frames = []
+	with open('bread.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def healthpotion_pic():
+	frames = []
+	with open('healthpotion.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def mysteryman_pic():
+	frames = []
+	with open('mysteryman.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def sphinx_pic():
+	frames = []
+	with open('sphnix.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))

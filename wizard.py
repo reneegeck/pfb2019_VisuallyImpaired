@@ -6,7 +6,7 @@ import subprocess
 import time
 from print_wizard import decode, input1, input2, input3
 from animate_dice import blinking_dice
-from  print_ascii import wizard_pic
+from  print_ascii import wizard_pic, swan_pic()
 user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	
@@ -17,7 +17,7 @@ def wizard_gift(user):
 	q2 = q2.lower()
 	while q2.lower() not in ['a','b']:
 		q2 = input2('')
-	if q2 == 'a':
+	if q2.lower() == 'a':
 		print("You are smart and you are tripping GOOOOOOOOOOOOD")
 		subprocess.run(["say","-v","Daniel","you are smart and you are tripping GOOOOOOOOOOOOD"])		
 		user.add_item('Third Eye')
@@ -43,7 +43,7 @@ def wizard_gift(user):
 			print('What was that? Try again.')
 			subprocess.run(["say","-v","Daniel","What was that? Try again."])
 			q3 = input3('')
-		if q3  == 'yes':
+		if q3.lower()  == 'yes':
 			user.heal(20)
 			print("I see you feel way better now, you can go to the next level now")
 			subprocess.run(["say","-v","Daniel","I see you feel way better now, you can go to the next level now"])
@@ -73,7 +73,7 @@ def wizard_fight(user):
 				print("What did you say? Let's try again.Do you wan to drink your healing potion?")
 				subprocess.run(["say","-v","Daniel","What did you say? Let's try again.Do you wan to drink your healing potion?"])
 				heal_choice = input3('')
-			if heal_choice == 'yes':
+			if heal_choice.lower() == 'yes':
 				user.heal(30)
 				subprocess.run(["say","-v","Daniel","Ahhh. How refreshing. Tastes like strawberries. Much better. You are ready for the next level"])
 				user.print_health_bar()
@@ -87,7 +87,7 @@ def wizard_fight(user):
 				print("What did you say? Let's try again. Fancy a lavander tea?")
 				subprocess.run(["say","-v", "Daniel", "What did you say? Let's try again. Fancy a lavander tea?"])
 				heal_choice = input3('')
-			if heal_choice == 'yes':
+			if heal_choice.lower() == 'yes':
 				user.heal(10)
 				print("Ahhh. How refreshing. Tastes like flowers. Much better. You are ready for the next level")
 				subprocess.run(["say","-v","Daniel","Ahhh. How refreshing. Tastes like flowers. Much better. You are ready for the next level"])
@@ -108,7 +108,7 @@ def wizard_fight(user):
 				print("What did you say? Let's try again.Do you wan to drink your healing potion?")
 				subprocess.run(["say","-v", "Daniel", "What did you say? Let's try again.Do you wan to drink your healing potion?"])
 				heal_choice = input3('')
-			if heal_choice == 'yes':
+			if heal_choice.lower() == 'yes':
 				user.heal(10)
 				print("Ahhh. How refreshing. Tastes like strawberries. Much better. Now you are ready for the next level")
 				subprocess.run(["say","-v","Daniel","Ahhh. How refreshing. Tastes like strawberries. Much better. Now you are ready for the next level"])
@@ -130,9 +130,14 @@ def wizard_fight(user):
 			while q4.lower() not in ['yes', 'no']:
 				print("Do you want to try to upgrade to Python3?")
 				subprocess.run(["say","-v","Daniel","Do you want to try to upgrade to Python3?"])
-			if q4 == 'yes':
+			if q4.lower() == 'yes':
 				subprocess.run(["say", "-v", "Daniel", "GET READY FOR THE ULTIMATE SWAN FIGHT!"])
 				print("THE ULTIMATE SWAN FIGHT!")
+				print("    THE ULTIMATE SWAN FIGHT!")
+				print("        THE ULTIMATE SWAN FIGHT!")
+				print("            THE ULTIMATE SWAN FIGHT!")
+				print("                THE ULTIMATE SWAN FIGHT!")
+				swan_pic()
 				if 'Bread' in user.inventory['items']:
 					print("I think swans like bread, do you want to feed it to the swan?")
 					subprocess.run(["say","-v","Daniel","I think swans like bread, do you want to feed it to the swan?"])
@@ -141,7 +146,7 @@ def wizard_fight(user):
 					while q5.lower() not in ['yes', 'no']:
 						print("I think swans like bread, do you want to feed it to the swan?")
 						subprocess.run(["say","-v","Daniel","I think swans like bread, do you want to feed it to the swan?"])
-					if q5 == 'yes':
+					if q5.lower() == 'yes':
 						print("The swan appreciates the bread. Now you have upgraded to the newest Python3, you are 50 point smarter and you are ready for the next level")
 						subprocess.run(["say","-v","Daniel","the swan appreciates the bread. Now you have upgraded to the newest python3, you are 50 point smarter and you are ready for the next level "])
 						user.get_smarter(50)
@@ -201,7 +206,7 @@ def wizard_encounter(user):
 		print("What was that? Try again.")
 		subprocess.run(["say","-v","Daniel","What was that? Try again."])
 		q1 = input3('')
-	if q1 == 'yes':
+	if q1.lower() == 'yes':
 		wizard_gift(user)
 	else:
 		print('Simon realized you are trying to steal his book dummy! Now roll a die to see if you can beat Simon!')

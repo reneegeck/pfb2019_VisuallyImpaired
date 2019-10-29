@@ -6,7 +6,7 @@ import subprocess
 import time
 from print_wizard import decode, input1, input2, input3
 from animate_dice import blinking_dice
-from  print_ascii import wizard_pic, swan_pic()
+from  print_ascii import wizard_pic, swan_pic
 #user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	

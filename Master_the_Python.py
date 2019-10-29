@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon
+
+#======================================================
+#      REQUIRED MODULES
+
+import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon, wizard, os, Random_encounters
 
 #======================================================
 from print_quiz import decode
 from print_quiz import quiz_input1, quiz_input2, quiz_input3, quiz_input4, quiz_input5, quiz_input6
+
 
 
 print("Hello - what is your name?")
@@ -125,32 +130,37 @@ else: #otherwise squirrel
 	player = user.User('Squirrel', 100, 50, 60, 60, set(), dict())
 	print_ascii.squirrel_pic()
 
-time.sleep(2)
-player.print_user_stats()
-time.sleep(5)
-print('\n\n\n')
+time.sleep(3)
+print('\n')
 
 #test
 player.print_health_bar()
 player.print_speed_bar()
 player.print_intel_bar()
 player.print_armor_bar()
+print('\n\n')
+time.sleep(2)
+
+print("Are you ready?")
+input('Press any key to continue\n')
 
 #===================================================
 
+os.system('clear')
 print('You heft your suitcase out of your Uber and find yourself on the Cold Spring Harbor Laboratories Campus')
-time.sleep(1)
-print_ascii.CSHL_logo()			#ASCII CSHL ART
+time.sleep(2)
+print_ascii.CSHL_logo()
+input('Press any key to continue\n')
+print('\n\n')
 print('Mmm so lovely, it smells like fall.')
 print('\n\n')
 time.sleep(3)
-
 print("But you don't let all that nature distract you from your mission.\n")
 time.sleep(2)
 print("You have traveled by plane, train, and car to come here to gain the skills needed to... \n\n")
-time.sleep(1.5)
+time.sleep(2)
 print_ascii.master_the_python_pic()
-time.sleep(2.5)
+time.sleep(3)
 print("You and your village have been plagued with inefficient data analysis and server error messages.\n\n")
 time.sleep(2)
 print("You have come seeking the wisdom of CSHL to be worthy of the art of the PYTHON.")
@@ -178,6 +188,12 @@ while player.health > 0: #so long as you aren't dead yet...
 	#call the raccoon fight functions
 	fight_raccoon.raccoon_fight(player)
 
+#==================================================
+
+#apple random encouter
+
+
+
 #===================================================
 
 	#call little vinny's encounter
@@ -187,6 +203,16 @@ while player.health > 0: #so long as you aren't dead yet...
 
 #call riddles encounter
 #riddle_encounter.answer_riddles(player)
+#bread enconounter
+
+#=================================================
+
+#call wizard
+	os.system('clear')
+	wizard.wizard_encounter(player)
+
+#call random encounter regex
+
 #=================================================
 #Die for now to get out of loop
 	player.health = 0

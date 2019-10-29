@@ -5,10 +5,12 @@ import time
 import sys
 from print_quiz import re_input_easy, re_input_med, re_input_hard
 import print_ascii
+import os
 
-player = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
+player = user.User('Pigeon', 100, 60, 60, 40, set(), dict())
 
 def random_en1(user):
+	os.system("clear")
 	#find sketch food, do you eat it?
 	#if you choose to eat the apple, there's a 50% chance it will injure you and a 50% chance it will heal you
 	#print apple art
@@ -28,39 +30,40 @@ def random_en1(user):
 		else:
 			print("Yum, a crisp and juicy apple. You gain 10 health.")
 			user.heal(10)
+			time.sleep(1)
 			user.print_health_bar()
+			time.sleep(2)
 	else:
 		print("You leave the apple alone and walk away")
+		time.sleep(2)
 random_en1(player)
-player.print_user_stats()
 
 def random_en2(user):
+  os.system("clear")
+  time.sleep(2)
   #useless item encouter
   print_ascii.mysteryman_pic()
-  print("A mysterious man approaches you.")
   time.sleep(2)
+  print("A mysterious man approaches you.")
+  time.sleep(3)
   #print man image
-	print_ascii.pinecone_pic()
   print("He hands you an ordinary-looking dirty pinecone.")
   time.sleep(2)
+  print_ascii.pinecone_pic()
+  time.sleep(3)
   #print pinecone image
-  print("'It's dangerous to go alone! Take this!'")
-  if 'Useless Pinecone' in user.inventory['items']:
-    print("Yikes...this guy again. You take the pinecone and discreetly throw it out.")
-  else: 
-    time.sleep(1)
-    delay_string = ("...")
-    for char in delay_string:
-      sys.stdout.write(char)
-      sys.stdout.flush()
-      time.sleep(1)
-    time.sleep(2)
-    print("\n""Okay...It's probably a good idea not to argue with him. You put the pinecone in your inventory and walk away.")
-    user.add_item('Useless Pinecone')
+  print("'It's dangerous to go alone! Take this!'") 
+  time.sleep(2)
+  print(".......")
+  time.sleep(2)
+  print("Okay...It's probably a good idea not to argue with him. You put the pinecone in your inventory and walk away.")
+  user.add_item('Useless Pinecone')
+  time.sleep(3)
 random_en2(player)
 
 def random_en3(user):
-	print_ascii.sphnix_pic()
+  os.system("clear")
+  print_ascii.sphinx_pic()
   print("Shasta the Sphinx walks up to you.")
   #text color change
   print("\033[32mAnswer my questions and I will give you a prize!\033[m")
@@ -73,13 +76,17 @@ def random_en3(user):
       re_e = re_input_easy('')
     if re_e.lower() == 'b':
       print("Congrats! You chose the correct answer. All that studying is paying off.")
+      time.sleep(2)
       print("Shasta hands you a health potion. Sweet!")
+      time.sleep(2)
+      print_ascii.healthpotion_pic()
       user.add_item('Health Potion')
     else:
       re_e.lower() == ('a' or 'c' or 'd')
       print("Yikes...that's not right. Were you asleep during that module?")
+      time.sleep(2)
       print("You walk away empty-handed")
-	elif user.intel >= 50:
+  elif user.intel >= 50:
     #medium regex quiz
     print("Your intelligence is okay, but you'll have to think a little on this one...")
     re_m = re_input_med('')
@@ -88,12 +95,16 @@ def random_en3(user):
       re_m = re_input_med('')
     if re_m.lower() == 'b':
       print("Congrats! You chose the correct answer. All that studying is paying off.")
+      time.sleep(2)
       print("Shasta hands you a health potion. Sweet!")
+      time.sleep(2)
+      print_ascii.healthpotion_pic()
       user.add_item('Health Potion')
     else:
       print("Yikes...that's not right. Were you asleep during that module?")
+      time.sleep(2)
       print("You walk away empty-handed")
-	else:
+  else:
     #hard regex quiz
     print("Whew, you're not feeling so smart right now. This is going to be a tough one.")
     re_h = re_input_hard('')
@@ -103,7 +114,10 @@ def random_en3(user):
     if re_h.lower() == 'b':
       print_ascii.healthpotion()
       print("Congrats! You chose the correct answer. All that studying is paying off.")
+      time.sleep(2)
       print("Shasta hands you a health potion. Sweet!")
+      time.sleep(2)
+      print_ascii.healthpotion_pic()
       user.add_item('Health Potion')
     else:
       print("Yikes...that's not right. Were you asleep during that module?")
@@ -112,8 +126,9 @@ random_en3(player)
 
 #make mini-encounter before swan fight, yields "Bread"
 def random_en4(user):
-   print_ascii.bread_pic()
-	 print("Joe walks by and offers you some bread from the cafeteria. It looks like normal bread, but why is he giggling? Do you take the bread?")
+  os.system("clear")
+  print_ascii.bread_pic()
+  print("Joe walks by and offers you some bread from the cafeteria. It looks like normal bread, but why is he giggling? Do you take the bread?")
   print("A) Yes or  B) No")
   en4_ans = input(">>> ")
   print(en4_ans)

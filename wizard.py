@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
-import user 
-import random 
-import subprocess
-import time
+import user, os, random, subprocess, time 
 from print_wizard import decode, input1, input2, input3
 from animate_dice import blinking_dice
-from  print_ascii import wizard_pic, swan_pic
+from  print_ascii import wizard_pic, swan_pic, mushoorm_pic, pie_pic
 #user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	
@@ -18,6 +15,7 @@ def wizard_gift(user):
 	while q2.lower() not in ['a','b']:
 		q2 = input2('')
 	if q2.lower() == 'a':
+		mushroom_pic()
 		print("You are smart and you are tripping GOOOOOOOOOOOOD")
 		subprocess.run(["say","-v","Daniel","you are smart and you are tripping GOOOOOOOOOOOOD"])		
 		user.add_item('Third Eye')
@@ -29,6 +27,7 @@ def wizard_gift(user):
 		print("And you aquired the key to the gate that leads to inner realms of higher consciousness, hope you have a great time in the next level")
 		subprocess.run(["say","-v","Daniel","And you aquired the key to the gate that leads to inner realms of higher consciousness, hope you have a great time in the next level"])
 	else:
+		pie_pic()
 		print("you had indigestion of cherry pie and will spend 50 minutes in the wizard's toilet.. and there is no toilet paper!")
 		subprocess.run(["say","-v","Daniel","you had indigestion of cherry pie and will spend 50 minutes in the wizard's toilet.. and there is no toilet paper!"])
 		user.injure(30)
@@ -64,7 +63,7 @@ def wizard_fight(user):
 		user.print_intel_bar()
 		print("Simon the wizard knocked you out, you are out of shape, less coding and more running")
 		subprocess.run(["say", "-v", "Daniel", "Simon the wizard knocked you out, you are out of shape, less coding and more running"])
-		if user.health < 26 and 'healing potion' in user.inventory['items']:
+		if user.health < 26 and 'Healing Potion' in user.inventory['items']:
 			print("Hmm looks like you aren't doing so great.Do you wan to drink your healing potion?")
 			subprocess.run(["say","-v", "Daniel", "Hmm looks like you aren't doing so great.Do you wan to drink your healing potion?"])
 			heal_choice = input3('')
@@ -99,7 +98,7 @@ def wizard_fight(user):
 		subprocess.run(["say", "-v", "Daniel", "You made it ok, no book though... Simon kicks you to the next level"])
 		user.print_health_bar()
 		user.print_intel_bar()
-		if user.health < 26 and 'healing potion' in user.inventory['items']:
+		if user.health < 26 and 'Healing Potion' in user.inventory['items']:
 			print("Hmm looks like you aren't doing so great. Do you wan to drink your healing potion?")
 			subprocess.run(["say","-v", "Daniel", "Hmm looks like you aren't doing so great. Do you wan to drink your healing potion?"])
 			heal_choice = input3('')
@@ -196,7 +195,10 @@ def wizard_fight(user):
 	return user
 
 def wizard_encounter(user):
+	os.system('clear')
 	print('You stumbled on Simon the Wizard of Cold Spring Harbor')
+	subprocess.run(["say", "-v", "Samantha", "You stumbled on Simon the Wizard of Cold Spring Harbor"])
+	print("\n")
 	wizard_pic()
 	print("Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?")
 	subprocess.run(["say","-v","Daniel","Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?"])

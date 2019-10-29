@@ -3,7 +3,7 @@
 import user, os, random, subprocess, time 
 from print_wizard import decode, input1, input2, input3
 from animate_dice import blinking_dice
-from  print_ascii import wizard_pic, swan_pic, mushoorm_pic, pie_pic
+from print_ascii import wizard_pic, swan_pic, mushroom_pic, pie_pic
 #user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	

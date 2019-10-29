@@ -12,10 +12,10 @@ user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 	
 def wizard_gift(user):
 	print("Simon is getting a little tipsy! \n Simon is offering you a gift, do you want a mushroom from the Cold Spring Harbor forest or a cherry pie imported directly from Twedes Cafe")
-	subprocess.run(["say","-v", "Daniel", "Simon is offering you a gift, do you want a mushroom from the Cold Spring Harbor forest or a cherry pie imported directly from Twedes Cafe"])
+	subprocess.run(["say","-v", "Daniel", "Simon is getting a little tipsy! Simon is offering you a gift, do you want a mushroom from the Cold Spring Harbor forest or a cherry pie imported directly from Twedes Cafe"])
 	q2 = input1('')
 	q2 = q2.lower()
-	while q2 not in ['a','b']:
+	while q2.lower() not in ['a','b']:
 		q2 = input2('')
 	if q2 == 'a':
 		print("You are smart and you are tripping GOOOOOOOOOOOOD")
@@ -39,7 +39,7 @@ def wizard_gift(user):
 		subprocess.run(["say","-v", "Daniel", "Sorry there was no toilet paper, do you want a camomille?"])
 		q3 = input3('')
 		q3 = q3.lower()
-		while q3 not in ['yes']:
+		while q3.lower() not in ['yes']:
 			print('What was that? Try again.')
 			subprocess.run(["say","-v","Daniel","What was that? Try again."])
 			q3 = input3('')
@@ -69,30 +69,30 @@ def wizard_fight(user):
 			subprocess.run(["say","-v", "Daniel", "Hmm looks like you aren't doing so great.Do you wan to drink your healing potion?"])
 			heal_choice = input3('')
 			heal_choice = heal_choice.lower()
-			while heal_choice not in ['yes']:
+			while heal_choice.lower() not in ['yes']:
 				print("What did you say? Let's try again.Do you wan to drink your healing potion?")
 				subprocess.run(["say","-v","Daniel","What did you say? Let's try again.Do you wan to drink your healing potion?"])
 				heal_choice = input3('')
 			if heal_choice == 'yes':
-				user.health(30)
+				user.heal(30)
 				subprocess.run(["say","-v","Daniel","Ahhh. How refreshing. Tastes like strawberries. Much better. You are ready for the next level"])
-				user.print_intel_bar()
 				user.print_health_bar()
+				user.print_intel_bar()
 		if user.health > 26:
 			print("you loose few health points, do you fancy a restoring lavander tea?")
 			subprocess.run(["say","-v", "Daniel", "you loose few health points, do you fancy a restoring lavander tea?"])
 			heal_choice = input3('')
 			heal_choice = heal_choice.lower()
-			while heal_choice not in ['yes']:
+			while heal_choice.lower() not in ['yes']:
 				print("What did you say? Let's try again. Fancy a lavander tea?")
 				subprocess.run(["say","-v", "Daniel", "What did you say? Let's try again. Fancy a lavander tea?"])
 				heal_choice = input3('')
 			if heal_choice == 'yes':
-				user.health(10)
+				user.heal(10)
 				print("Ahhh. How refreshing. Tastes like flowers. Much better. You are ready for the next level")
 				subprocess.run(["say","-v","Daniel","Ahhh. How refreshing. Tastes like flowers. Much better. You are ready for the next level"])
-				user.print_intel_bar()
 				user.print_health_bar()
+				user.print_intel_bar()
 	elif success in range(3,5):
 		user.injure(10)
 		print('You made it ok, no book though...Simon kicks you to the next level') 
@@ -104,22 +104,22 @@ def wizard_fight(user):
 			subprocess.run(["say","-v", "Daniel", "Hmm looks like you aren't doing so great. Do you wan to drink your healing potion?"])
 			heal_choice = input3('')
 			heal_choice = heal_choice.lower()
-			while heal_choice not in ['yes']:
+			while heal_choice.lower() not in ['yes']:
 				print("What did you say? Let's try again.Do you wan to drink your healing potion?")
 				subprocess.run(["say","-v", "Daniel", "What did you say? Let's try again.Do you wan to drink your healing potion?"])
 				heal_choice = input3('')
 			if heal_choice == 'yes':
-				user.health(10)
+				user.heal(10)
 				print("Ahhh. How refreshing. Tastes like strawberries. Much better. Now you are ready for the next level")
 				subprocess.run(["say","-v","Daniel","Ahhh. How refreshing. Tastes like strawberries. Much better. Now you are ready for the next level"])
 	elif success in range(5,8):
 		user.get_smarter(30)
 		user.add_item('Python2')
-		print("You are novice! That's embarassing.You stole the wrong book: the book of Python2")
+		print("You are novice! That's embarassing. You stole the wrong book: the book of Python2")
 		subprocess.run(["say","-v","Daniel","You are novice! That's embarassing.You stole the wrong book: the book of Python2"])
 		print('You are:')
-		user.print_intel_bar()
 		user.print_health_bar()
+		user.print_intel_bar()
 		print('And you have:')
 		print(user.inventory['items'])
 		if 'Python2' in user.inventory['items']:
@@ -127,6 +127,9 @@ def wizard_fight(user):
 			subprocess.run(["say","-v","Daniel","Do you want to try to upgrade to Python3?"])
 			q4 = input3('')
 			q4 = q4.lower()
+			while q4.lower() not in ['yes', 'no']:
+				print("Do you want to try to upgrade to Python3?")
+				subprocess.run(["say","-v","Daniel","Do you want to try to upgrade to Python3?"])
 			if q4 == 'yes':
 				subprocess.run(["say", "-v", "Daniel", "GET READY FOR THE ULTIMATE SWAN FIGHT!"])
 				print("THE ULTIMATE SWAN FIGHT!")
@@ -135,9 +138,12 @@ def wizard_fight(user):
 					subprocess.run(["say","-v","Daniel","I think swans like bread, do you want to feed it to the swan?"])
 					q5 = input3('')
 					q5 = q5.lower()
+					while q5.lower() not in ['yes', 'no']:
+						print("I think swans like bread, do you want to feed it to the swan?")
+						subprocess.run(["say","-v","Daniel","I think swans like bread, do you want to feed it to the swan?"])
 					if q5 == 'yes':
-						print("The swan appreciates the bread. Now you have upgraded to the newest Python3, you are ready for the next level")
-						subprocess.run(["say","-v","Daniel","the swan appreciates the bread. Now you have upgraded to the newest python3, you are ready for the next level "])
+						print("The swan appreciates the bread. Now you have upgraded to the newest Python3, you are 50 point smarter and you are ready for the next level")
+						subprocess.run(["say","-v","Daniel","the swan appreciates the bread. Now you have upgraded to the newest python3, you are 50 point smarter and you are ready for the next level "])
 						user.get_smarter(50)
 						user.add_item('Python3')
 						user.print_health_bar()	
@@ -148,20 +154,35 @@ def wizard_fight(user):
 						user.print_health_bar()
 						user.print_intel_bar()
 				else:
-					print("The swan bite you and you are running away, go to the next level")
-					subprocess.run(["say","-v","Daniel","the swan bite you and you are running away, go to the next level"])
-					user.print_health_bar()
-					user.print_intel_bar()	
+					blinking_dice()
+					success = random.randint(1, 6)
+					print(success)
+					if success in range(0,3):
+						print("You were unprepared, the swan bite you and you lost 30 health points. You are running away, go to the next level")
+						subprocess.run(["say","-v","Daniel","You were unprepared, the swan bite and you lost 30 health points. You are running away, go to the next level"])
+						user.injure(30)
+						user.print_health_bar()
+						user.print_intel_bar()
+					else:
+						print("You won the battle, you are 50 point smarter and you have upgraded to the newest Python3, good luck in the next level")	
+						subprocess.run(["say","-v","Daniel","You won the battle, you are 50 point smarter and you have upgraded to the newest Python3, good luck in the next level"])
+						user.get_smarter(50)
+						user.add_item('Python3')
+						user.print_health_bar()
+						user.print_intel_bar()
 			else:
-				print("You are lazy, goodbye, go to the next level")
-				subprocess.run(["say", "-v", "Daniel", "you are lazy, goodbye, go to the next level"])
+				print("You are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level")
+				subprocess.run(["say", "-v", "Daniel", "you are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level"])
+				user.get_slower(10)
+				user.get_dumber(10)
 				user.print_health_bar()
 				user.print_intel_bar()
+				user.print_speed_bar()
 	elif success in range(8,11):
 		user.get_smarter(50)
 		user.add_item('Python3')
-		print("You are fine burglar! You have the mistic powers of Python3 scripting! Now you are ready for the next level")
-		subprocess.run(["say","-v","Daniel","You are fine burglar! You have the mistic powers of Python3 scripting! Now you are ready for the next level"])
+		print("You are fine burglar! You have the mistic powers of Python3 scripting! Now you are 50 point smarter andyou are ready for the next level")
+		subprocess.run(["say","-v","Daniel","You are fine burglar! You have the mistic powers of Python3 scripting! Now you are 50 point smarter andyou are ready for the next level"])
 		print('Yayyyyyyyyy! You are:')
 		user.print_health_bar()
 		user.print_intel_bar()
@@ -176,12 +197,11 @@ def wizard_encounter(user):
 	subprocess.run(["say","-v","Daniel","Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?"])
 	q1 = input3('')
 	q1 = q1.lower()
-	while q1 not in ['yes','no']:
+	while q1.lower() not in ['yes','no']:
 		print("What was that? Try again.")
 		subprocess.run(["say","-v","Daniel","What was that? Try again."])
 		q1 = input3('')
 	if q1 == 'yes':
-		print('Simon is getting a little tipsy')
 		wizard_gift(user)
 	else:
 		print('Simon realized you are trying to steal his book dummy! Now roll a die to see if you can beat Simon!')

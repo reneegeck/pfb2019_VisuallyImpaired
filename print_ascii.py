@@ -49,7 +49,7 @@ def wizard_pic():
 	for frame in frames:
 		print("".join(frame))
 
-def horshoecrab_pic():
+def horseshoecrab_pic():
 	frames = []
 	with open('horseshoe_crab.txt','r') as f:
 		frames.append(f.readlines())
@@ -58,7 +58,7 @@ def horshoecrab_pic():
 
 def bananaslug_pic():
 	frames = []
-	with open('banana_slug.txt','r') as f:
+	with open('banana_slug.py','r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
@@ -100,7 +100,7 @@ def sword_pic():
 
 def CSHL_logo():
 	frames = []
-	with open('CSHL_logo.txt','r') as f:
+	with open('CSHL_logo.text','r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))

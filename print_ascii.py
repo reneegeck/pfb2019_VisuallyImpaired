@@ -208,4 +208,4 @@ def mushroom_pic():
 	with open('mushroom.txt','r') as f:
 		frames.append(f.readlines())
 	for frame in frames:
-		print("".join(frames))
+		print("".join(frame))

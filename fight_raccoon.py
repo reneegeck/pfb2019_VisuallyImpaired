@@ -129,7 +129,7 @@ def raccoon_fight(player):
 	print('That raccoon looks pretty intimidating. Are those wolverine claws? Damn. A formidable opponent for certain.\n\n')
 	time.sleep(3)
 	print('You realize you have to fight it. But you must survive to continue your quest for the Python!\n\n')
-	time.sleep(3)
+	time.sleep(4)
 
 	#pick a weapon
 	weapon = pick_weapon_fight(player)

@@ -61,31 +61,31 @@ def quiz_input6(variable1,variable2):
   return(answer)
 
 def re_input_easy(text):
-  print("What will match the following EASY regular expression?")
-  print("[Regular expression]")
-  print(decode('+---------------%' + '+--------------%' + '+------------%' + '+-------------%'))
-  print(decode('| A) Bananas    |' + '| B)  Seaweed  |' + '|  C)  Corn  |' + '| D)  Nuts    |'))
-  print(decode('\\---------------/' + '\\--------------/' + '\\------------/' + '\\-------------/'))
-  answer = input('>>> ')
-  return(answer)	
+	print("What will match the following EASY regular expression?")
+	print("\033[1m^\w{3}\s\w+$\033[0m")
+	print(decode('+-----------------%' + '+--------------%' + '+----------------%' + '+-----------------%'))
+	print(decode("| A) silly goose  |" + '| B)  fat cat  |' + '|  C)  lazy dog  |' + '| D)  quick fox   |'))
+	print(decode('\\-----------------/' + '\\--------------/' + '\\----------------/' + '\\-----------------/'))
+	answer = input('>>> ')
+	return(answer)	
 
 def re_input_med(text):
-  print("What will match the following MEDIUM regular expression?")
-  print("[regular expression]")
-  print(decode('+---------------%' + '+--------------%' + '+------------%' + '+-------------%'))
-  print(decode('| A) Bananas    |' + '| B)  Seaweed  |' + '|  C)  Corn  |' + '| D)  Nuts    |'))
-  print(decode('\\---------------/' + '\\--------------/' + '\\------------/' + '\\-------------/'))
-  answer = input('>>> ')
-  return(answer)
+	print("What will match the following MEDIUM regular expression?")
+	print("\033[1m^.*\s[^o]{3}$\033[0m")
+	print(decode('+-----------------%' + '+--------------%' + '+----------------%' + '+-----------------%'))
+	print(decode("| A) $illy goose  |" + '| B)  fat cat  |' + '|  C)  lazy dog  |' + '| D)  quick fox   |'))
+	print(decode('\\-----------------/' + '\\--------------/' + '\\----------------/' + '\\-----------------/'))
+	answer = input('>>> ')
+	return(answer)
 
 def re_input_hard(text):
-  print("What will match the following DIFFICULT` regular expression?")
-  print("[regular expression]")
-  print(decode('+---------------%' + '+--------------%' + '+------------%' + '+-------------%'))
-  print(decode('| A) Bananas    |' + '| B)  Seaweed  |' + '|  C)  Corn  |' + '| D)  Nuts    |'))
-  print(decode('\\---------------/' + '\\--------------/' + '\\------------/' + '\\-------------/'))
-  answer = input('>>> ')
-  return(answer)
+	print("What will match the following DIFFICULT regular expression?")
+	print("\033[1m^.{3,4}\s*[a-z]+[^e-h]{2}$\033[0m")
+	print(decode('+-----------------%' + '+--------------%' + '+----------------%' + '+-----------------%'))
+	print(decode("| A) silly go0se  |" + '| B)  faT cat  |' + '|  C)  lazy dog  |' + '| D)  quick f0x   |'))
+	print(decode('\\-----------------/' + '\\--------------/' + '\\----------------/' + '\\-----------------/'))
+	answer = input('>>> ')
+	return(answer)
 
 
 

@@ -205,7 +205,7 @@ def wizard_fight(user):
 
 def wizard_encounter(user):
 	os.system('clear')
-	print('You stumbled on Simon the Wizard of Cold Spring Harbor')
+	print('\nYou stumbled on Simon the Wizard of Cold Spring Harbor\n')
 	subprocess.run(["say", "-v", "Samantha", "You stumbled on Simon the Wizard of Cold Spring Harbor"])
 	print("\n")
 	wizard_pic()

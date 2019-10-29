@@ -142,15 +142,15 @@ print('\n\n')
 time.sleep(2)
 
 print("Are you ready?")
-input('Press any key to continue\n')
+input('Press enter to continue\n')
 
 #===================================================
 
 os.system('clear')
 print('You heft your suitcase out of your Uber and find yourself on the Cold Spring Harbor Laboratories Campus')
-time.sleep(2)
+time.sleep(2.5)
 print_ascii.CSHL_logo()
-input('Press any key to continue\n')
+input('Press enter to continue\n')
 print('\n\n')
 print('Mmm so lovely, it smells like fall.')
 print('\n\n')

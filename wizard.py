@@ -11,7 +11,7 @@ user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	
 def wizard_gift(user):
-	print("Simon is offering you a gift, do you want a mushroom from the Cold Spring Harbor forest or a cherry pie imported directly from Twedes Cafe")
+	print("Simon is getting a little tipsy! \n Simon is offering you a gift, do you want a mushroom from the Cold Spring Harbor forest or a cherry pie imported directly from Twedes Cafe")
 	subprocess.run(["say","-v", "Daniel", "Simon is offering you a gift, do you want a mushroom from the Cold Spring Harbor forest or a cherry pie imported directly from Twedes Cafe"])
 	q2 = input1('')
 	q2 = q2.lower()
@@ -39,7 +39,7 @@ def wizard_gift(user):
 		subprocess.run(["say","-v", "Daniel", "Sorry there was no toilet paper, do you want a camomille?"])
 		q3 = input3('')
 		q3 = q3.lower()
-		while q3 not in ['yes','no']:
+		while q3 not in ['yes']:
 			print('What was that? Try again.')
 			subprocess.run(["say","-v","Daniel","What was that? Try again."])
 			q3 = input3('')
@@ -95,7 +95,8 @@ def wizard_fight(user):
 				user.print_health_bar()
 	elif success in range(3,5):
 		user.injure(10)
-		print('You made it ok, no book though...') 
+		print('You made it ok, no book though...Simon kicks you to the next level') 
+		subprocess.run(["say", "-v", "Daniel", "You made it ok, no book though... Simon kicks you to the next level"])
 		user.print_health_bar()
 		user.print_intel_bar()
 		if user.health < 26 and 'healing potion' in user.inventory['items']:
@@ -171,7 +172,7 @@ def wizard_fight(user):
 def wizard_encounter(user):
 	print('You stumbled on Simon the Wizard of Cold Spring Harbor')
 	wizard_pic()
-	print("Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle")
+	print("Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?")
 	subprocess.run(["say","-v","Daniel","Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?"])
 	q1 = input3('')
 	q1 = q1.lower()

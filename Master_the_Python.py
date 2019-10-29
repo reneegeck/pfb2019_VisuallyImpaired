@@ -3,7 +3,7 @@
 #======================================================
 #      REQUIRED MODULES
 
-import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon, wizard, os, fight_python, Random_encouters
+import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon, wizard, os, fight_python, Random_encouters, riddle_encounter
 
 #======================================================
 from print_quiz import decode
@@ -189,6 +189,9 @@ while player.health > 0: #so long as you aren't dead yet...
 	#end game if you die
 	if player.health < 1:
 		break
+	print("You're feeling a little hungry after all that exercise...")
+	time.sleep(3)
+
 #==================================================
 
 #apple random encouter
@@ -210,7 +213,7 @@ while player.health > 0: #so long as you aren't dead yet...
 #=================================================
 
 #call riddles encounter
-#riddle_encounter.answer_riddles(player)
+	riddle_encounter.answer_riddles(player)
 
 #================================================
 

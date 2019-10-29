@@ -15,19 +15,22 @@ def attack_coon(user, weapon):
 	user_miss = ['You swing, but are a little overenthusiastic, and miss the raccoon.', "The raccoon dodges away and your swing misses.", "You hit the ground instead of the raccoon. Maybe try to aim next time?"]
 
 	if user.health < 26 and 'Healing Potion' in user.inventory['items']:
-		print("Hmm looks like you aren't doing so great.")
+		print("Hmm looks like you aren't doing so great.\n\n")
+		time.sleep(2)
 		print('Do you want to drink your healing potion?')
 		heal_choice = input('Yes or no? ')
 		heal_choice = heal_choice.lower()
+		print('\n\n')
 		while heal_choice not in ['yes', 'no']:
-			print("What did you say? Let's try again.")
+			print("What did you say? Let's try again.\n\n")
 			heal_choice = input('Do you want to drink your healing potion? ')
 		if heal_choice == 'yes':
 			user.heal(50)
 			user.remove_item('Healing Potion')
+			print('\n\n')
 			user.print_health_bar()
-			print('Ahhh. How refreshing. Tastes like strawberries. Much better.')
-			time.sleep(2)
+			print('\n\nAhhh. How refreshing. Tastes like strawberries. Much better.')
+			time.sleep(3)
 			print('\n\n')
 
 	if weapon == 'sword':
@@ -45,13 +48,19 @@ def attack_coon(user, weapon):
 		print(user_miss[rand_user_miss])
 		points = 0
 	else: #you get a high number
-		print('Nicely done! You hit it!')
+		print('Nicely done! You hit it!\n\n')
+		time.sleep(2)
 		if try_points < 25: #good hit 
 			rand_coon_inj = random.randint(0,2)
 			print(coon_injured[rand_coon_inj]) #print one of the statements where you hit the coon
-		elif hit > 145 or try_points > 29 and 'weapon master' not in user.status:
-			print('Impressive hit! You have gained the status WEAPON MASTER.')
-			user.add_status('weapon master')
+		elif hit > 145 or try_points > 29:
+			if 'weapon master' not in user.status:
+				print('Impressive hit! You have gained the status WEAPON MASTER.')
+				user.add_status('weapon master')
+				time.sleep(2)
+			else:
+				rand_coon_sev = random.randint(0,2)
+				print(coon_severe_inj[rand_coon_sev])
 		else: #you get a really good hit
 			rand_coon_sev = random.randint(0,2)
 			print(coon_severe_inj[rand_coon_sev])
@@ -72,13 +81,11 @@ def coon_attacks(user):
 		rand_miss = random.randint(0,2)
 		print(coon_miss[rand_miss])
 		points = 0
-		user.print_health_bar()
 	else: #it hit, now determine damage
 		points = random.randint(5,25)
 		rand_hit = random.randint(0,2)
 		print(coon_hit[rand_hit])
 		user.injure(points)
-		user.print_health_bar()
 	return
 
 #==========================================
@@ -111,7 +118,7 @@ def pick_weapon_fight(user):
 		while weapon_used not in user.inventory['weapons']:
 			print("Hmm that doesn't seem to be a weapon you have...Let's try again.")
 			weapon_used = input('Which weapon do you want to use? ')
-		print('Okay! You will fight with your', weapon_used +'.')
+		print('\n\nOkay! You will fight with your', weapon_used +'.')
 	return weapon_used
 
 #===============================================
@@ -119,30 +126,38 @@ def pick_weapon_fight(user):
 
 def raccoon_fight(player):
 	print_ascii.raccoon_pic()
-	print('That raccoon looks pretty intimidating. Are those wolverine claws? Damn. A formidable opponent for certain.')
-	print('You realize you have to fight it. But you must survive to continue your quest for the Python!')
+	print('That raccoon looks pretty intimidating. Are those wolverine claws? Damn. A formidable opponent for certain.\n\n')
 	time.sleep(3)
-	print('\n\n')
+	print('You realize you have to fight it. But you must survive to continue your quest for the Python!\n\n')
+	time.sleep(3)
 
 	#pick a weapon
 	weapon = pick_weapon_fight(player)
-	time.sleep(2)
 	print('\n\n')
+	if weapon == 'sword':
+		print_ascii.sword_pic()
+	elif weapon == 'axe':
+		print_ascii.axe_pic()
+	else:
+		print_ascii.dagger_pic()
+	time.sleep(3)
+		
 
 	#Initialize the raccoon
 	coon_health = 40
 
 	#Initialise tihe fight loop
 
-	print('Okay! Time to fight!\n\n')
+	print('Prepare to fight!\n\n')
 	player.print_health_bar()
 	time.sleep(2)
-	print('Are you ready?')
-	say_yes = input('Say yes!')
+	print('\n\nAre you ready?')
+	say_yes = input('Say yes! ')
 	while say_yes.lower() not in ['yes']:
 		print("\n\nAt least give it a try!")
-		say_yes = input('Say yes!')
+		say_yes = input('Say yes! ')
 	print('\n\nYou take a swing at the raccoon.\n\n')
+	time.sleep(2)	
 
 	fight_choice = True
 	while fight_choice == True:
@@ -151,11 +166,13 @@ def raccoon_fight(player):
 		coon_damage = attack_coon(player, weapon)
 		coon_health -= coon_damage
 		if coon_health < 1:
+			time.sleep(2)
 			print_ascii.sleepy_raccoon_pic()
 			print('That was too much for this raccoon. He passes out where he stands.\n\n')
 			print("Huh. He looks much less scary when he's asleep.")
 			time.sleep(5)
 			print("\n\nBut wait! What's that behind the raccoon?\n\n")
+			time.sleep(2)
 			print_ascii.linux_book_pic()
 			print("\n\nA Linux book, cool! That will come in handy later.")
 			player.add_item('Linux Book')
@@ -164,21 +181,27 @@ def raccoon_fight(player):
 			break
 
 		time.sleep(2)
-		print('\n\n')
 		coon_attack_say = ['Uh oh, looks like the raccoon is going to take a swipe at you now!', "You can't run away yet! The raccoon is angry...", "Wow that raccoon is pissed. It goes on the offensive."]
 		rand_coon_say = random.randint(0,2)
+		print('\n\n')
 		print(coon_attack_say[rand_coon_say])
 		print('\n\n')
 		time.sleep(2)
-		print("Are you ready to go on the defensive?\n\n")
-		better_say_yes = input('Say yes!')
-		while better_say_yes.lower() is not in ['yes']:
-			print("Defend yourself! Are you ready?\n\n")
-			better_say_yes = input('Say yes!')
+		print("Are you ready to go on the defensive?")
+		better_say_yes = input('Say yes! ')
+		while better_say_yes.lower() not in ['yes']:
+			print("\n\nDefend yourself! Are you ready?")
+			better_say_yes = input('Say yes! ')
 		print('\n\n')
+		time.sleep(2)
 
 		#raccoon fights you
 		coon_attacks(player)
+		print('\n\n')
+		if player.health < 1:
+			print("Oh dear. Mauled by a raccoon? What a way to go.\n\n")
+			break
+		player.print_health_bar()
 
 		print('\n\n')
 		time.sleep(2)

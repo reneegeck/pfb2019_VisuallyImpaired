@@ -156,7 +156,7 @@ def python_fight(player):
 	print("To battle and prove your worth to the PYTHON.\n\n")
 	time.sleep(4)
 	
-	input('Press any key to continue.\n\n')
+	input('Press enter to continue.\n\n')
 	
 	#Go through inventory and repot what helpful things you have
 	print("First, you recall what you have learned.\n\n")
@@ -292,6 +292,8 @@ def python_fight(player):
 		os.system('clear')
 		print('\n\n\n\n')
 	else: #otherwise you died
+		print("\n\nThat blow was too much for your fragile body to handle.")
+		time.sleep(2)
 		print("\n\nSo close, yet so far.\n\n")
 		time.sleep(1)
 		print("Better luck next time!")

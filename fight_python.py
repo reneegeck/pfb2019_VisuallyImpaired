@@ -97,7 +97,7 @@ def pyth_attacks(user):
 
 	#make some response options
 	pyth_miss = ["The PYTHON darts towards you but misses.", "You feel its fangs pass over your head, but they don't hit. Lucky you!", "Its fangs graze you, but don't draw blood. Safe - for now. Unless it's poisonous..."]
-	pyth_hit = ["Oh no! The PYTHON stabs you with his fangs!","Ow, that hurt. Watch out for those fangs!","The python squeezes you, crushing the breath out of your fragile body. Ouch."]
+	pyth_hit = ["Oh no! The PYTHON stabs you with its fangs!","Ow, that hurt. Watch out for those fangs!","The python squeezes you, crushing the breath out of your fragile body. Ouch."]
 
 	hit = random.randint(10,120)
 	protect_bonus = 0
@@ -116,7 +116,7 @@ def pyth_attacks(user):
 			print(pyth_hit[rand_hit])
 		else: #otherwise there was no damage
 			points = 0
-			print('Nice! You special powers protected you from the blow!')
+			print('Nice! Your special powers protected you from the blow!')
 	return points
 
 #==========================================
@@ -214,7 +214,7 @@ def python_fight(player):
 	print('\n\n')
 
 	#start the fight
-	pyth_health = 100
+	pyth_health = 10
 
 	print('Are you ready to fight the PYTHON?')
 	fight_yes = input('Say yes! ')
@@ -274,7 +274,9 @@ def python_fight(player):
 
 	if pyth_health <= 0:
 		#print about winning
+		time.sleep(2)
 		print('\n\nCongratulations! The PYTHON concedes and bows to you.\n\n')
+		time.sleep(2)
 		print_ascii.cute_python_pic()
 		time.sleep(4)
 		print("Simon and Sofia look on respectfully.\n\n")
@@ -282,10 +284,11 @@ def python_fight(player):
 		subprocess.run(['say', '-v', 'Daniel', 'Well done!'])
 		subprocess.run(['say', '-v', 'Samantha', 'Great job!'])
 		print("Maybe they will ask you to TA next year...\n\n")
-		time.sleep(2)
+		time.sleep(3)
 		print("Triumphant, you saunter off to the bar. You deserve a beer.\n\n")
+		time.sleep(2)
 		print_ascii.beer_pic()
-		time.sleep(4)
+		time.sleep(3)
 		os.system('clear')
 		print('\n\n\n\n')
 		print_ascii.end_pic()

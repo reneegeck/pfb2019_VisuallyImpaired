@@ -7,8 +7,6 @@ from print_quiz import re_input_easy, re_input_med, re_input_hard
 import print_ascii
 import os
 
-player = user.User('Pigeon', 100, 60, 60, 40, set(), dict())
-
 def random_en1(user):
 	os.system("clear")
 	#find sketch food, do you eat it?
@@ -30,16 +28,19 @@ def random_en1(user):
 			user.injure(10)
 			time.sleep(1)
 			user.print_health_bar()
+			time.sleep(2)
+			input("Press enter to continue")
 		else:
 			print("Yum, a crisp and juicy apple. You gain 10 health.")
 			user.heal(10)
 			time.sleep(1)
 			user.print_health_bar()
 			time.sleep(2)
+			input("Press enter to continue")
 	else:
 		print("You leave the apple alone and walk away")
 		time.sleep(2)
-random_en1(player)
+		input("Press enter to continue")
 
 def random_en2(user):
   os.system("clear")
@@ -61,8 +62,7 @@ def random_en2(user):
   time.sleep(2)
   print("Okay...It's probably a good idea not to argue with him. You put the pinecone in your inventory and walk away.")
   user.add_item('Useless Pinecone')
-  time.sleep(3)
-random_en2(player)
+  input("Press enter to continue ")
 
 def random_en3(user):
   os.system("clear")
@@ -83,16 +83,18 @@ def random_en3(user):
     if re_e.lower() == 'b':
       print("Congrats! You chose the correct answer. All that studying is paying off.")
       time.sleep(2)
-      print("Shasta hands you a health potion. Sweet!")
+      print("Shasta hands you a healing potion. Sweet!")
       time.sleep(2)
       print_ascii.healthpotion_pic()
       time.sleep(2)
-      user.add_item('Health Potion')
+      user.add_item('Healing Potion')
+      input("Press enter to continue")
     else:
       print("Yikes...that's not right. Were you asleep during that module?")
       time.sleep(2)
       print("You walk away empty-handed")
       time.sleep(2)
+      input("Press enter to continue")
   elif user.intel >= 50:
     #medium regex quiz
     print("Your intelligence is okay, but you'll have to think a little on this one...")
@@ -103,16 +105,18 @@ def random_en3(user):
     if re_m.lower() == 'b':
       print("Congrats! You chose the correct answer. All that studying is paying off.")
       time.sleep(2)
-      print("Shasta hands you a health potion. Sweet!")
+      print("Shasta hands you a healing potion. Sweet!")
       time.sleep(2)
       print_ascii.healthpotion_pic()
       time.sleep(2)
-      user.add_item('Health Potion')
+      user.add_item('Healing Potion')
+      input("Press enter to continue")
     else:
       print("Yikes...that's not right. Were you asleep during that module?")
       time.sleep(2)
       print("You walk away empty-handed")
       time.sleep(2)
+      input("Press enter to continue")
   else:
     #hard regex quiz
     print("Whew, you're not feeling so smart right now. This is going to be a tough one.")
@@ -123,17 +127,18 @@ def random_en3(user):
     if re_h.lower() == 'b':
       print("Congrats! You chose the correct answer. All that studying is paying off.")
       time.sleep(2)
-      print("Shasta hands you a health potion. Sweet!")
+      print("Shasta hands you a healing potion. Sweet!")
       time.sleep(2)
       print_ascii.healthpotion_pic()
       time.sleep(2)
-      user.add_item('Health Potion')
+      user.add_item('Healing Potion')
+      input("Press enter to continue")
     else:
       print("Yikes...that's not right. Were you asleep during that module?")
       time.sleep(2)
       print("You walk away empty-handed")
       time.sleep(2)
-random_en3(player)
+      input("Press enter to continue")
 
 #make mini-encounter before swan fight, yields "Bread"
 def random_en4(user):
@@ -168,14 +173,15 @@ def random_en4(user):
         time.sleep(1)
         user.print_health_bar()
         time.sleep(2)
+        input("Press enter to continue")
     else:
         print("You keep the bread in your pocket for later, just in case.")
         time.sleep(2)
+        input("Press enter to continue")
   else:
     print("Mom said never to take candy from strangers. You walk away from Joe.")
     time.sleep(2)
-random_en4(player)
-
+    input("Press enter to continue")
 
 
 

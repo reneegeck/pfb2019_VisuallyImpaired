@@ -124,6 +124,12 @@ player.print_user_stats()
 time.sleep(5)
 print('\n\n\n')
 
+#test
+player.print_health_bar()
+player.print_speed_bar()
+player.print_intel_bar()
+player.print_armor_bar()
+
 #===================================================
 
 print('You heft your suitcase out of your Uber and find yourself on the Cold Spring Harbor Laboratories Campus')

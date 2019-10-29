@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import user
+import user, time
 
 def choose_weapon(player):
 				#initialize weapon set if not present already
@@ -32,5 +32,7 @@ def choose_weapon(player):
 							print("Try again!")
 							continue #you get to go back to the top of the while loop and try again
 						player.add_weapon(chosenWeapon) #add to set of weapons
-					return player 
-					print('Great! You are now armed with a ', chosenWeapon, '.', sep='')
+					print('\n\nGreat! You are now armed with a ', chosenWeapon, '.', sep='')
+					time.sleep(3)
+					return player
+

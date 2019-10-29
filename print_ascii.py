@@ -195,3 +195,17 @@ def swan_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
+
+def pie_pic():
+	frames = []
+	with open('pie.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def mushroom_pic():
+	frames = []
+	with open('mushroom.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))

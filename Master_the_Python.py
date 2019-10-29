@@ -3,7 +3,7 @@
 #======================================================
 #      REQUIRED MODULES
 
-import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon, wizard, os, Random_encounters
+import user, weapon_choice, little_vinnys, time, random, print_ascii, fight_raccoon, wizard, os, fight_python, Random_encouters, riddle_encounter
 
 #======================================================
 from print_quiz import decode
@@ -174,25 +174,31 @@ time.sleep(2)
 weapon_choice.choose_weapon(player)
 
 while player.health > 0: #so long as you aren't dead yet...
-#==============================================
-	#Encounter with person who asks you questions to get a healing potion
 
 #================================================
 	#RACCOON FIGHT
+	os.system("clear")
 	time.sleep(2)
-	print("You're starting to feel kind of hungry and are about to head off to find some food")
+	print("\n\nYou're starting to feel kind of hungry and are about to head off to find some food\n\n")
 	time.sleep(2)
-	print("When a giant RACCOON steps out to block your path!")
+	print("When a giant RACCOON steps out to block your path!\n\n")
 	time.sleep(2)
 
 	#call the raccoon fight functions
 	fight_raccoon.raccoon_fight(player)
+	#end game if you die
+	if player.health < 1:
+		break
+	print("You're feeling a little hungry after all that exercise...")
+	time.sleep(3)
 
 #==================================================
 
 #apple random encouter
-
-
+	Random_encouters.random_en1(player)	
+	#end game if you die
+	if player.health < 1:
+		break
 
 #===================================================
 
@@ -201,21 +207,46 @@ while player.health > 0: #so long as you aren't dead yet...
 
 #==================================================
 
+#pinecone random encouter
+	Random_encouters.random_en2(player)
+
+#=================================================
+
 #call riddles encounter
-#riddle_encounter.answer_riddles(player)
-#bread enconounter
+	riddle_encounter.answer_riddles(player)
+
+#================================================
+
+#bread random enconounter
+	Random_encouters.random_en4(player)
+	#you may or may not have bread in your inventory
 
 #=================================================
 
 #call wizard
-	os.system('clear')
 	wizard.wizard_encounter(player)
 
-#call random encounter regex
+#================================================
 
+#REGEX quiz random encounter
+	#difficulty is determined by player's current intelligence stat
+	Random_encouters.random_en3(player)
+	#you may or may not have aquired a health potion
+
+#================================================
+
+#Python fight!
+	fight_python.python_fight(player)
+	break
 #=================================================
 #Die for now to get out of loop
-	player.health = 0
+	#player.health = 0
 #============================================================
-player.print_health_bar()
-print('Too bad. So long, friend.')
+
+if player.health <= 0:
+	print('\n\n\n')
+	print_ascii.game_over_pic()
+
+else:
+	print('\n\n\n')
+	print_ascii.end_pic()

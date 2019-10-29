@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
-import user 
-import random 
-import subprocess
-import time
+import user, os, random, subprocess, time 
 from print_wizard import decode, input1, input2, input3
 from animate_dice import blinking_dice
-from  print_ascii import wizard_pic, swan_pic
+from print_ascii import wizard_pic, swan_pic, mushroom_pic, pie_pic
 #user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	
@@ -18,6 +15,7 @@ def wizard_gift(user):
 	while q2.lower() not in ['a','b']:
 		q2 = input2('')
 	if q2.lower() == 'a':
+		mushroom_pic()
 		print("You are smart and you are tripping GOOOOOOOOOOOOD")
 		subprocess.run(["say","-v","Daniel","you are smart and you are tripping GOOOOOOOOOOOOD"])		
 		user.add_item('Third Eye')
@@ -25,10 +23,11 @@ def wizard_gift(user):
 		print('Wow, that mushroom made you:')
 		user.print_health_bar() 
 		user.print_intel_bar()
-		user.list_items()
+		print(",".join(user.inventory['items']))
 		print("And you aquired the key to the gate that leads to inner realms of higher consciousness, hope you have a great time in the next level")
 		subprocess.run(["say","-v","Daniel","And you aquired the key to the gate that leads to inner realms of higher consciousness, hope you have a great time in the next level"])
 	else:
+		pie_pic()
 		print("you had indigestion of cherry pie and will spend 50 minutes in the wizard's toilet.. and there is no toilet paper!")
 		subprocess.run(["say","-v","Daniel","you had indigestion of cherry pie and will spend 50 minutes in the wizard's toilet.. and there is no toilet paper!"])
 		user.injure(30)
@@ -49,6 +48,7 @@ def wizard_gift(user):
 			subprocess.run(["say","-v","Daniel","I see you feel way better now, you can go to the next level now"])
 			user.print_health_bar()
 			user.print_intel_bar()
+	input("Press ENTER to continue ")
 	return user	
 	
 def wizard_fight(user):
@@ -64,7 +64,7 @@ def wizard_fight(user):
 		user.print_intel_bar()
 		print("Simon the wizard knocked you out, you are out of shape, less coding and more running")
 		subprocess.run(["say", "-v", "Daniel", "Simon the wizard knocked you out, you are out of shape, less coding and more running"])
-		if user.health < 26 and 'healing potion' in user.inventory['items']:
+		if user.health < 26 and 'Healing Potion' in user.inventory['items']:
 			print("Hmm looks like you aren't doing so great.Do you wan to drink your healing potion?")
 			subprocess.run(["say","-v", "Daniel", "Hmm looks like you aren't doing so great.Do you wan to drink your healing potion?"])
 			heal_choice = input3('')
@@ -99,7 +99,7 @@ def wizard_fight(user):
 		subprocess.run(["say", "-v", "Daniel", "You made it ok, no book though... Simon kicks you to the next level"])
 		user.print_health_bar()
 		user.print_intel_bar()
-		if user.health < 26 and 'healing potion' in user.inventory['items']:
+		if user.health < 26 and 'Healing Potion' in user.inventory['items']:
 			print("Hmm looks like you aren't doing so great. Do you wan to drink your healing potion?")
 			subprocess.run(["say","-v", "Daniel", "Hmm looks like you aren't doing so great. Do you wan to drink your healing potion?"])
 			heal_choice = input3('')
@@ -121,7 +121,7 @@ def wizard_fight(user):
 		user.print_health_bar()
 		user.print_intel_bar()
 		print('And you have:')
-		print(user.inventory['items'])
+		print(",".join(user.inventory['items']))
 		if 'Python2' in user.inventory['items']:
 			print("Do you want to try to upgrade to Python3?")
 			subprocess.run(["say","-v","Daniel","Do you want to try to upgrade to Python3?"])
@@ -133,10 +133,15 @@ def wizard_fight(user):
 			if q4.lower() == 'yes':
 				subprocess.run(["say", "-v", "Daniel", "GET READY FOR THE ULTIMATE SWAN FIGHT!"])
 				print("THE ULTIMATE SWAN FIGHT!")
+				time.sleep(2)
 				print("    THE ULTIMATE SWAN FIGHT!")
+				time.sleep(2)
 				print("        THE ULTIMATE SWAN FIGHT!")
+				time.sleep(2)
 				print("            THE ULTIMATE SWAN FIGHT!")
+				time.sleep(2)
 				print("                THE ULTIMATE SWAN FIGHT!")
+				time.sleep(2)
 				swan_pic()
 				if 'Bread' in user.inventory['items']:
 					print("I think swans like bread, do you want to feed it to the swan?")
@@ -153,6 +158,7 @@ def wizard_fight(user):
 						user.add_item('Python3')
 						user.print_health_bar()	
 						user.print_intel_bar()
+						print(",".join(user.inventory['items']))
 					else:
 						print("The swan bite you and you are running away, go to the next level")
 						subprocess.run(["say","-v","Daniel","the swan bite you and you are running away, go to the next level"])
@@ -175,6 +181,7 @@ def wizard_fight(user):
 						user.add_item('Python3')
 						user.print_health_bar()
 						user.print_intel_bar()
+						print(",".join(user.inventory['items']))
 			else:
 				print("You are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level")
 				subprocess.run(["say", "-v", "Daniel", "you are lazy, you loose 10 speed and 10 intelligence points, try harder next time! Goodbye, go to the next level"])
@@ -186,17 +193,21 @@ def wizard_fight(user):
 	elif success in range(8,11):
 		user.get_smarter(50)
 		user.add_item('Python3')
-		print("You are fine burglar! You have the mistic powers of Python3 scripting! Now you are 50 point smarter andyou are ready for the next level")
-		subprocess.run(["say","-v","Daniel","You are fine burglar! You have the mistic powers of Python3 scripting! Now you are 50 point smarter andyou are ready for the next level"])
+		print("You are fine burglar! You have the mystic powers of Python3 scripting! Now you are 50 point smarter and you are ready for the next level")
+		subprocess.run(["say","-v","Daniel","You are fine burglar! You have the mystic powers of Python3 scripting! Now you are 50 point smarter and you are ready for the next level"])
 		print('Yayyyyyyyyy! You are:')
 		user.print_health_bar()
 		user.print_intel_bar()
 		print('And you have:')
-		print(user.inventory['items'])
+		print(",".join(user.inventory['items']))
+	input("Press ENTER to continue ")
 	return user
 
 def wizard_encounter(user):
-	print('You stumbled on Simon the Wizard of Cold Spring Harbor')
+	os.system('clear')
+	print('\nYou stumbled on Simon the Wizard of Cold Spring Harbor\n')
+	subprocess.run(["say", "-v", "Samantha", "You stumbled on Simon the Wizard of Cold Spring Harbor"])
+	print("\n")
 	wizard_pic()
 	print("Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?")
 	subprocess.run(["say","-v","Daniel","Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?"])

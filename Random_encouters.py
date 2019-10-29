@@ -36,10 +36,11 @@ player.print_user_stats()
 
 def random_en2(user):
   #useless item encouter
+  print_ascii.mysteryman_pic()
   print("A mysterious man approaches you.")
   time.sleep(2)
   #print man image
-	print_ascii.mysteryman_pic()
+	print_ascii.pinecone_pic()
   print("He hands you an ordinary-looking dirty pinecone.")
   time.sleep(2)
   #print pinecone image

@@ -7,7 +7,7 @@ import time
 from print_wizard import decode, input1, input2, input3
 from animate_dice import blinking_dice
 from  print_ascii import wizard_pic, swan_pic()
-user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
+#user = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
 
 	
 def wizard_gift(user):
@@ -214,4 +214,4 @@ def wizard_encounter(user):
 		wizard_fight(user)
 	return q1
 
-wizard_encounter(user)
+#wizard_encounter(user)

@@ -9,7 +9,7 @@ import print_ascii
 
 def attack_python(user, weapon):
 
-	#make response possibilities - MUST UPDATE
+	#make response possibilities
 	pyth_injured = ['The PYTHON dodges away but you still draw some blood.', "The PYTHON hisses in anger after your blow. Hope it's not venomous.","You draw some blood but the PYTHON hardly seems to notice."]
 	pyth_severe_inj = ["Ow. That PYTHON isn't looking so good now.", "Wow! You hit that PYTHON pretty hard.", "The PYTHON sways back after the strength of your blow."]
 	user_miss = ["You swing, but it bounces right off the PYTHON's scales.", "The PYTHON sways away and your swing misses.", "You hit the ground instead of the PYTHON. Maybe try to aim next time?"]
@@ -145,7 +145,7 @@ def python_fight(player):
 	print("What you've been looking for this whole time\n\n")
 	time.sleep(2)
 	print("THE PYTHON")
-	#PRINT PYTHON ASCII ART HERE
+	print_ascii.scary_python_pic()
 	time.sleep(5)
 	print("You both know that there is only one reason you are here.\n\n")
 	time.sleep(2)
@@ -197,6 +197,13 @@ def python_fight(player):
 
 	#pick a weapon
 	weapon = pick_weapon_fight(player)
+	if weapon == 'sword':
+		print_ascii.sword_pic()
+	elif weapon == 'axe':
+		print_ascii.axe_pic()
+	else:
+		#print_ascii.dagger_pic()
+		print('There will be a dagger picture')
 	time.sleep(2)
 	print('\n\n')
 
@@ -261,7 +268,8 @@ def python_fight(player):
 	if pyth_health <= 0:
 		#print about winning
 		print('\n\nCongratulations! The PYTHON concedes and bows to you.\n\n')
-		time.sleep(2)
+		print_ascii.cute_python_pic()
+		time.sleep(4)
 		print("Simon and Sofia look on respectfully.\n\n")
 		time.sleep(2)
 		print("Maybe they will ask you to TA next year...\n\n")

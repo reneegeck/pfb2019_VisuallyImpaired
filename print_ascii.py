@@ -41,3 +41,81 @@ def linux_book_pic():
 		frames.append(f.readlines())
 	for frame in frames:
 		print("".join(frame))
+
+def wizard_pic():
+	frames = []
+	with open('code_for_wizard_ASCII.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def horshoecrab_pic():
+	frames = []
+	with open('horseshoe_crab.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def bananaslug_pic():
+	frames = []
+	with open('banana_slug.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def pigeon_pic():
+	frames = []
+	with open('pigeon.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def squirrel_pic():
+	frames = []
+	with open('squirrel.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def axe_pic():
+	frames = []
+	with open('axe.txt') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def master_the_python_pic():
+	frames = []
+	with open('master_the_python.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def sword_pic():
+	frames = []
+	with open('minecraft_sword.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def CSHL_logo():
+	frames = []
+	with open('CSHL_logo.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def scary_python_pic():
+	frames = []
+	with open('scary_python.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+
+def cute_python_pic():
+	frames = []
+	with open('cute_python.txt','r') as f:
+		frames.append(f.readlines())
+	for frame in frames:
+		print("".join(frame))
+

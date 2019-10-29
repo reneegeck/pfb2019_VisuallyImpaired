@@ -147,7 +147,7 @@ input('Press enter to continue\n')
 #===================================================
 
 os.system('clear')
-print('You heft your suitcase out of your Uber and find yourself on the Cold Spring Harbor Laboratories Campus')
+print('\n\nYou heft your suitcase out of your Uber and find yourself on the Cold Spring Harbor Laboratories Campus')
 time.sleep(2.5)
 print_ascii.CSHL_logo()
 input('Press enter to continue\n')

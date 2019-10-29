@@ -38,11 +38,12 @@ def wizard_gift(user):
 		print("Sorry there was no toilet paper, do you want a camomille?")
 		subprocess.run(["say","-v", "Daniel", "Sorry there was no toilet paper, do you want a camomille?"])
 		q3 = input3('')
+		q3 = q3.lower()
 		while q3 not in ['yes','no']:
 			print('What was that? Try again.')
 			subprocess.run(["say","-v","Daniel","What was that? Try again."])
 			q3 = input3('')
-		if q3.lower() == 'yes':
+		if q3  == 'yes':
 			user.heal(20)
 			print("I see you feel way better now, you can go to the next level now")
 			subprocess.run(["say","-v","Daniel","I see you feel way better now, you can go to the next level now"])
@@ -124,14 +125,16 @@ def wizard_fight(user):
 			print("Do you want to try to upgrade to Python3?")
 			subprocess.run(["say","-v","Daniel","Do you want to try to upgrade to Python3?"])
 			q4 = input3('')
-			if q4.lower() == 'yes':
+			q4 = q4.lower()
+			if q4 == 'yes':
 				subprocess.run(["say", "-v", "Daniel", "GET READY FOR THE ULTIMATE SWAN FIGHT!"])
 				print("THE ULTIMATE SWAN FIGHT!")
 				if 'Bread' in user.inventory['items']:
 					print("I think swans like bread, do you want to feed it to the swan?")
 					subprocess.run(["say","-v","Daniel","I think swans like bread, do you want to feed it to the swan?"])
 					q5 = input3('')
-					if q5.lower() == 'yes':
+					q5 = q5.lower()
+					if q5 == 'yes':
 						print("The swan appreciates the bread. Now you have upgraded to the newest Python3, you are ready for the next level")
 						subprocess.run(["say","-v","Daniel","the swan appreciates the bread. Now you have upgraded to the newest python3, you are ready for the next level "])
 						user.get_smarter(50)
@@ -171,11 +174,12 @@ def wizard_encounter(user):
 	print("Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle")
 	subprocess.run(["say","-v","Daniel","Hi! My name is Simon the Wizard of Cold Spring Harbor, I'm the ward of the magic book of Python3, do you want to get a potato beer at the Eagle?"])
 	q1 = input3('')
+	q1 = q1.lower()
 	while q1 not in ['yes','no']:
 		print("What was that? Try again.")
 		subprocess.run(["say","-v","Daniel","What was that? Try again."])
 		q1 = input3('')
-	if q1.lower() == 'yes':
+	if q1 == 'yes':
 		print('Simon is getting a little tipsy')
 		wizard_gift(user)
 	else:

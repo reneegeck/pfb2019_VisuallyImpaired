@@ -6,8 +6,6 @@ import sys
 from print_quiz import re_input_easy, re_input_med, re_input_hard
 import print_ascii
 
-player = user.User('Horseshoe Crab', 100, 80, 50, 60, set(), dict())
-
 def random_en1(user):
 	#find sketch food, do you eat it?
 	#if you choose to eat the apple, there's a 50% chance it will injure you and a 50% chance it will heal you

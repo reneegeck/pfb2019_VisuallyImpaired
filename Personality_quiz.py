@@ -16,64 +16,69 @@ answer_dict = {'Banana Slug': 0, 'Horseshoe Crab': 0, 'Pigeon': 0, 'Squirrel': 0
 
 q1 = quiz_input1('')
 
+while q1.lower() not in ['a','b','c','d']:
+  print("What? Try again!")
+  q1 = quiz_input1('') 
 if q1.lower() == 'a':
 	answer_dict['Banana Slug'] += 1
 elif q1.lower() == 'b':
 	answer_dict['Horseshoe Crab'] += 1
 elif q1.lower() == 'c':
 	answer_dict['Pigeon'] += 1
-elif q1.lower() == 'd':
-	answer_dict['Squirrel'] += 1
 else:
-	print("What? Try again!")
+	answer_dict['Squirrel'] += 1
 
 q2 = quiz_input2('')
+while q2.lower() not in ['a','b','c','d']:
+  print("What? Try again!")
+  q2 = quiz_input2('')
 if q2.lower() == 'a':
 	answer_dict['Banana Slug'] += 1
 elif q2.lower() == 'b':
 	answer_dict['Horseshoe Crab'] += 1
 elif q2.lower() == 'c':
 	answer_dict['Pigeon'] += 1
-elif q2.lower() == 'd':
-	answer_dict['Squirrel'] += 1
 else:
-	print("What? Try again!")
+	answer_dict['Squirrel'] += 1
 
 q3 = quiz_input3('')
+while q3.lower() not in ['a','b','c','d']:
+  print("What? Try again!")
+  q3 = quiz_input3('')
 if q3.lower() == 'a':
   answer_dict['Banana Slug'] += 1
 elif q3.lower() == 'b':
   answer_dict['Horseshoe Crab'] += 1
 elif q3.lower() == 'c':
   answer_dict['Pigeon'] += 1
-elif q3.lower() == 'd':
-  answer_dict['Squirrel'] += 1
 else:
-  print("What? Try again!")
+  answer_dict['Squirrel'] += 1
 
 q4 = quiz_input4('')
+while q4.lower() not in ['a','b','c','d']:
+  print("What? Try again!")
+  q4 = quiz_input4('') 
 if q4.lower() == 'a':
   answer_dict['Banana Slug'] += 1
 elif q4.lower() == 'b':
   answer_dict['Horseshoe Crab'] += 1
 elif q4.lower() == 'c':
   answer_dict['Pigeon'] += 1
-elif q4.lower() == 'd':
+else: 
   answer_dict['Squirrel'] += 1
-else:
-  print("What? Try again!")
 
 q5 = quiz_input5('')
+while q5.lower() not in ['a','b','c','d']:
+  print("What? Try again!")
+  q5 = quiz_input5('') 
 if q5.lower() == 'a':
   answer_dict['Banana Slug'] += 1
 elif q5.lower() == 'b':
   answer_dict['Horseshoe Crab'] += 1
 elif q5.lower() == 'c':
   answer_dict['Pigeon'] += 1
-elif q5.lower() == 'd':
-  answer_dict['Squirrel'] += 1
 else:
-  print("What? Try again!")
+  answer_dict['Squirrel'] += 1
 
 sorted_dict = sorted(answer_dict.items(), key=lambda x:x[1], reverse=True)
 
@@ -88,18 +93,19 @@ if sorted_dict[0][1] == sorted_dict[1][1]:
 		elif key == sorted_dict[1][0]:
 			variable2= TieBreak_Dict[key]
 	q6 = quiz_input6(variable1,variable2)
+	while q6.lower() not in ['a','b']:
+		print("What? Try again!")
+		q6 = quiz_input6(variable1,variable2) 
 	if q6.lower() == "a":
 		for key, value in TieBreak_Dict.items():
 			if value == variable1:
 				animal_name = key
 				print("Congrats, you are a", animal_name)
-	elif q6.lower() == "b":
+	else:
 		for key, value in TieBreak_Dict.items():
 			if value == variable2:
 				animal_name = key
 				print("Congrats, you are a", animal_name)
-	else:
-		print("Sorry I don't understand, try a different response")
 else:
 	animal_name = sorted_dict[0][0]
 	print("Congrats, you are a",animal_name)

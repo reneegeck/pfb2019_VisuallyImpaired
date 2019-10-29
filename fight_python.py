@@ -291,7 +291,6 @@ def python_fight(player):
 		time.sleep(3)
 		os.system('clear')
 		print('\n\n\n\n')
-		print_ascii.end_pic()
 	else: #otherwise you died
 		print("\n\nSo close, yet so far.\n\n")
 		time.sleep(1)

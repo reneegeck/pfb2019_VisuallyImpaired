@@ -48,7 +48,7 @@ def wizard_gift(user):
 			subprocess.run(["say","-v","Daniel","I see you feel way better now, you can go to the next level now"])
 			user.print_health_bar()
 			user.print_intel_bar()
-	input("Press any key to continue ")
+	input("Press ENTER to continue ")
 	return user	
 	
 def wizard_fight(user):
@@ -200,7 +200,7 @@ def wizard_fight(user):
 		user.print_intel_bar()
 		print('And you have:')
 		print(",".join(user.inventory['items']))
-	input("Press any key to continue ")
+	input("Press ENTER to continue ")
 	return user
 
 def wizard_encounter(user):

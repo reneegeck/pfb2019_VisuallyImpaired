@@ -69,23 +69,23 @@ def random_en3(user):
   os.system("clear")
   print_ascii.sphinx_pic()
   time.sleep(2)
-  print("You encouter Shasta the Sphinx. She says she has a quiz for you!")
+  print("You encounter Shasta the Sphinx. She says she has a quiz for you!")
   #text color change
   time.sleep(1.5)
-  print("\033[32mAnswer my questions and I will give you a prize!\033[m")
+  print("\033[32mAnswer my questions and I will give you a prize!\033[37m")
   subprocess.run(["say","-v","Samantha","Answer my questions and I will give you a prize!"])
   time.sleep(2)
   if user.intel >= 65:
-    print("\033[32mYou're a smart cookie, this one will be easy!\033[33m")
+    print("\033[32mYou're a smart cookie, this one will be easy!\033[37m")
     subprocess.run(["say","-v","Samantha","You're a smart cookie, this one will be easy!"])
     re_e = re_input_easy('')
     #easy regular expression quiz
     while re_e.lower() not in ['a','b','c','d']:
-      print("\033[32mThat makes no sense. What did you say?\033[33m")
+      print("\033[32mThat makes no sense. What did you say?\033[37m")
       subprocess.run(["say","-v","Samantha","That makes no sense. What did you say?"])
       re_e = re_input_easy('')
     if re_e.lower() == 'b':
-      print("\033[32mCongrats! You chose the correct answer. All that studying is paying off.\033[33m")
+      print("\033[32mCongrats! You chose the correct answer. All that studying is paying off.\033[37m")
       subprocess.run(["say","-v","Samantha","Congrats! You chose the correct answer. All that studying is paying off"])
       time.sleep(2)
       print("Shasta hands you a healing potion. Sweet!")
@@ -95,7 +95,7 @@ def random_en3(user):
       user.add_item('Healing Potion')
       input("Press enter to continue")
     else:
-      print("\033[32mYikes...that's not right. Were you asleep during that module?\033[33m")
+      print("\033[32mYikes...that's not right. Were you asleep during that module?\033[37m")
       subprocess.run(["say","-v","Samantha","Yikes...that's not right. Were you asleep during that module?"])
       time.sleep(2)
       print("You walk away empty-handed")
@@ -103,14 +103,14 @@ def random_en3(user):
       input("Press enter to continue")
   elif user.intel >= 50:
     #medium regex quiz
-    print("\033[32mYour intelligence is okay, but you'll have to think a little on this one...\033[33m")
+    print("\033[32mYour intelligence is okay, but you'll have to think a little on this one...\033[37m")
     re_m = re_input_med('')
     while re_m.lower() not in ['a','b','c','d']:
-      print("\033[32mThat makes no sense. What did you say?\033[33m")
+      print("\033[32mThat makes no sense. What did you say?\033[37m")
       subprocess.run(["say","-v","Samantha","That makes no sense. What did you say?"])
       re_m = re_input_med('')
     if re_m.lower() == 'b':
-      print("\033[32mCongrats! You chose the correct answer. All that studying is paying off.\033[33m")
+      print("\033[32mCongrats! You chose the correct answer. All that studying is paying off.\033[37m")
       subprocess.run(["say","-v","Samantha","Congrats! You chose the correct answer. All that studying is paying off"])
       time.sleep(2)
       print("Shasta hands you a healing potion. Sweet!")
@@ -120,7 +120,7 @@ def random_en3(user):
       user.add_item('Healing Potion')
       input("Press enter to continue")
     else:
-      print("\033[32mYikes...that's not right. Were you asleep during that module?\033[33m")
+      print("\033[32mYikes...that's not right. Were you asleep during that module?\033[37m")
       subprocess.run(["say","-v","Samantha","Yikes...that's not right. Were you asleep during that module?"])
       time.sleep(2)
       print("You walk away empty-handed")
@@ -128,16 +128,16 @@ def random_en3(user):
       input("Press enter to continue")
   else:
     #hard regex quiz
-    print("\033[32mWhew, you're not exactly the sharpest crayon in the box, are you? This is going to be a tough one.\033[33m")
+    print("\033[32mWhew, you're not exactly the sharpest crayon in the box, are you? This is going to be a tough one.\037[33m")
     subprocess.run(["say","-v","Samantha","Whew, you're not exactly the sharpest crayon in the box, are you? This is going to be a tough one"])
     re_h = re_input_hard('')
     while re_h.lower() not in ['a','b','c','d']:
-      print("\033[32mThat makes no sense. What did you say?\033[33m")
+      print("\033[32mThat makes no sense. What did you say?\033[37m")
       subprocess.run(["say","-v","Samantha","That makes no sense. What did you say?"])
       re_h = re_input_hard('')
     if re_h.lower() == 'b':
-      print("\033[32mCongrats! You chose the correct answer. All that studying is paying off.\033[33m")
-      subprocess.run(["say","-v","Samantha","Congrats! You chose the correct answer. All that studying is paying     off"])
+      print("\033[32mCongrats! You chose the correct answer. All that studying is paying off.\033[37m")
+      subprocess.run(["say","-v","Samantha","Congrats! You chose the correct answer. All that studying is paying off"])
       time.sleep(2)
       print("Shasta hands you a healing potion. Sweet!")
       time.sleep(2)
@@ -146,7 +146,7 @@ def random_en3(user):
       user.add_item('Healing Potion')
       input("Press enter to continue")
     else:
-      print("\033[32mYikes...that's not right. Were you asleep during that module?\033[33m")
+      print("\033[32mYikes...that's not right. Were you asleep during that module?\033[37m")
       subprocess.run(["say","-v","Samantha","Yikes...that's not right. Were you asleep during that module?"])
       time.sleep(2)
       print("You walk away empty-handed")
@@ -161,7 +161,7 @@ def random_en4(user):
   time.sleep(3)
   print_ascii.bread_pic()
   time.sleep(1)
-  print("A) Yes or  B) No")
+  print("A) Take the bread  or  B) Just walk away")
   en4_ans = input(">>> ")
   while en4_ans.lower() not in ['a','b']:
     print("You have two options, A or B, it's not that hard. Try again.")
